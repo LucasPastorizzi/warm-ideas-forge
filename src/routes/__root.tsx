@@ -75,11 +75,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Inkara — Estúdio de Tatuagem Autoral em São Paulo" },
       { name: "description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica. Mais de 12 anos transformando histórias em arte permanente." },
       { name: "author", content: "Inkara Studio" },
-      { property: "og:title", content: "Inkara — Estúdio de Tatuagem Autoral" },
-      { property: "og:description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica." },
+      { property: "og:title", content: "Inkara — Estúdio de Tatuagem Autoral em São Paulo" },
+      { property: "og:description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica. Mais de 12 anos transformando histórias em arte permanente." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Inkara — Estúdio de Tatuagem Autoral em São Paulo" },
+      { name: "twitter:description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica. Mais de 12 anos transformando histórias em arte permanente." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77f0c1d4-a514-4e55-8533-c8f0e1446879/id-preview-1be95ac7--d1cebc85-4a1e-4c58-a384-2708e23d112d.lovable.app-1778537819235.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77f0c1d4-a514-4e55-8533-c8f0e1446879/id-preview-1be95ac7--d1cebc85-4a1e-4c58-a384-2708e23d112d.lovable.app-1778537819235.png" },
     ],
     links: [
       {
