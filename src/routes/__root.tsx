@@ -72,11 +72,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Inkara — Estúdio de Tatuagem Autoral em São Paulo" },
+      { name: "description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica. Mais de 12 anos transformando histórias em arte permanente." },
+      { name: "author", content: "Inkara Studio" },
+      { property: "og:title", content: "Inkara — Estúdio de Tatuagem Autoral" },
+      { property: "og:description", content: "Tatuagens autorais com refinamento, técnica e experiência cinematográfica." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
@@ -108,12 +108,19 @@ function RootShell({ children }: { children: React.ReactNode }) {
   );
 }
 
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <Nav />
+      <main className="min-h-screen">
+        <Outlet />
+      </main>
+      <Footer />
     </QueryClientProvider>
   );
 }
