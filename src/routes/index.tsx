@@ -45,7 +45,7 @@ function Index() {
           <div className="md:col-span-7">
            
             <h1 className="mt-8 font-display tracking-tight" style={{ fontSize: "clamp(3.5rem, 9vw, 9rem)", lineHeight: 0.92 }}>
-              Histórias <em className="italic text-spectrum">eternas</em><br />
+              Histórias <em className="italic ">eternas</em><br />
               em arte<br />
               permanente<span className="cursor-bar" />
             </h1>
