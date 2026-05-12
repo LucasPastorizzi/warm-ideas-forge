@@ -50,7 +50,7 @@ function Index() {
               permanente<span className="cursor-bar" />
             </h1>
             <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-              Tatuagens autorais para quem busca exclusividade, refinamento e uma experiência cinematográfica do primeiro traço ao último.
+            Removido
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link to="/agendamento" className="btn-shine inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background">
@@ -72,12 +72,8 @@ function Index() {
                 height={1920}
               />
               <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-5 text-xs">
-                <span className="rounded-full bg-background/80 px-3 py-1.5 font-mono uppercase tracking-[0.18em] backdrop-blur">
-                  ◉ Em sessão
-                </span>
-                <span className="rounded-full bg-background/80 px-3 py-1.5 font-mono uppercase tracking-[0.18em] backdrop-blur">
-                  São Paulo, BR
-                </span>
+               
+              
               </div>
             </div>
           </div>
