@@ -83,21 +83,21 @@ export function Nav() {
             <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-black/10">
               <span
                 className="absolute inset-0 opacity-90"
-                style={{
-                  background: "var(--gradient-spectrum)",
-                }}
+              style={{
+  background: "linear-gradient(135deg, #000000, #2a2a2a, #000000)",
+}}
               />
 
               <span className="absolute inset-[1.5px] rounded-full bg-background" />
-
+                
               <span className="relative font-display text-lg text-foreground">
-                i
+                M
               </span>
             </span>
-
+                
             <span className="relative font-display text-lg tracking-tight text-foreground md:text-xl">
-              Inkara
-
+              
+                Mineiro Tattoo
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-black transition-all duration-500 group-hover:w-full" />
             </span>
           </Link>
