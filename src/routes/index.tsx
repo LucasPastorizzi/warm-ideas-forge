@@ -37,17 +37,14 @@ function Index() {
     <>
       {/* HERO */}
       <section className="relative min-h-screen overflow-hidden px-6 pt-32">
-        <div
-          className="pointer-events-none absolute inset-0 -z-10"
-          style={{ background: "var(--gradient-soft)" }}
-        />
+     
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
            
             <h1 className="mt-8 font-display tracking-tight" style={{ fontSize: "clamp(3.5rem, 9vw, 9rem)", lineHeight: 0.92 }}>
               Histórias <em className="italic ">eternas</em><br />
               em arte<br />
-              permanente<span className="cursor-bar" />
+              permanente
             </h1>
             <p className="mt-8 max-w-xl text-lg text-muted-foreground">
             Removido
@@ -122,7 +119,7 @@ function Index() {
             <div>
            
               <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-                Cada estilo,<br /> uma <em className="italic ">assinatura</em>.
+                Seu desejo, minha<br /> uma <em className="italic ">arte</em>.
               </h2>
             </div>
             <Link to="/estilos" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-secondary">
