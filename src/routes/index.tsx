@@ -122,7 +122,7 @@ function Index() {
             <div>
            
               <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-                Cada estilo,<br /> uma <em className="italic text-spectrum">assinatura</em>.
+                Cada estilo,<br /> uma <em className="italic ">assinatura</em>.
               </h2>
             </div>
             <Link to="/estilos" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-secondary">
@@ -151,7 +151,7 @@ function Index() {
         <div className="mx-auto max-w-7xl">
          
           <h2 className="reveal mt-6 max-w-4xl font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-            Do primeiro contato ao <em className="italic text-spectrum">último traço</em>.
+            Do primeiro contato ao <em className="italic">último traço</em>.
           </h2>
           <ol className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-4">
             {[
