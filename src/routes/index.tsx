@@ -77,12 +77,7 @@ function Index() {
         </div>
 
         <div className="mx-auto mt-24 grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 border-t border-border pt-10 md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.l} className="reveal">
-              <p className="font-display text-5xl tracking-tight md:text-6xl">{s.v}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.18em] text-muted-foreground">{s.l}</p>
-            </div>
-          ))}
+         
         </div>
       </section>
 
