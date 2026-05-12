@@ -100,9 +100,9 @@ function Index() {
             </div>
           </div>
           <div className="md:col-span-6">
-            <Eyebrow>O artista</Eyebrow>
+          
             <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-              Mais de 12 anos dedicados à <em className="italic text-spectrum">arte da pele</em>.
+              Mais de 12 anos dedicados à <em className="italic ">arte da pele</em>.
             </h2>
             <p className="mt-8 text-lg text-muted-foreground">
               Apaixonado pelo traço autoral, Inkara construiu uma linguagem própria que mescla técnica cinematográfica, sensibilidade narrativa e referências contemporâneas.
@@ -120,7 +120,7 @@ function Index() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <Eyebrow>Especialidades</Eyebrow>
+           
               <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
                 Cada estilo,<br /> uma <em className="italic text-spectrum">assinatura</em>.
               </h2>
@@ -149,7 +149,7 @@ function Index() {
       {/* PROCESSO */}
       <section className="border-t border-border bg-background px-6 py-32">
         <div className="mx-auto max-w-7xl">
-          <Eyebrow>Processo</Eyebrow>
+         
           <h2 className="reveal mt-6 max-w-4xl font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
             Do primeiro contato ao <em className="italic text-spectrum">último traço</em>.
           </h2>
