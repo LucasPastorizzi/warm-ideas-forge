@@ -1,23 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState, useRef } from "react";
+
 import heroImg from "@/assets/hero-artist.jpg";
 import studioImg from "@/assets/studio.jpg";
 import workBlackwork from "@/assets/work-blackwork.jpg";
 import workFineline from "@/assets/work-fineline.jpg";
 import workRealismo from "@/assets/work-realismo.jpg";
 import workOriental from "@/assets/work-oriental.jpg";
+
 import { Marquee } from "@/components/site/Marquee";
 import { Eyebrow } from "@/components/site/Section";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
-
-const stats = [
-  { v: "1.2k+", l: "Sessões realizadas" },
-  { v: "12", l: "Anos de carreira" },
-  { v: "4.9", l: "Avaliação média" },
-  { v: "8", l: "Estilos dominados" },
-];
 
 const styles = [
   { n: "01", name: "Blackwork", img: workBlackwork, desc: "Sólidos profundos, ornamentos, simbologia." },
@@ -27,155 +23,284 @@ const styles = [
 ];
 
 const testimonials = [
-  { q: "É como vestir uma obra de arte. Cada detalhe pensado para mim.", a: "Marina V.", role: "Cliente desde 2022" },
-  { q: "Inkara entendeu uma história que eu mal sabia contar — e a desenhou na minha pele.", a: "Rafael C.", role: "Cliente desde 2021" },
-  { q: "O processo é quase ritualístico. O resultado é único.", a: "Helena S.", role: "Cliente desde 2023" },
+  { q: "É como vestir uma obra de arte. Cada detalhe pensado para mim.", a: "Marina V." },
+  { q: "Inkara entendeu uma história que eu mal sabia contar — e a desenhou na minha pele.", a: "Rafael C." },
+  { q: "O processo é quase ritualístico. O resultado é único.", a: "Helena S." },
 ];
 
 function Index() {
+  const [scrollY, setScrollY] = useState(0);
+  const [sobreInView, setSobreInView] = useState(false);
+  const [carouselRotation, setCarouselRotation] = useState(0);
+  const [carouselInView, setCarouselInView] = useState(false);
+  const sobreRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Intersection Observer para animação 3D da seção sobre
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSobreInView(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sobreRef.current) {
+      observer.observe(sobreRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Carrosel 3D com rotação automática
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setCarouselInView(entry.isIntersecting);
+      },
+      { threshold: 0.3 }
+    );
+
+    if (carouselRef.current) {
+      observer.observe(carouselRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!carouselInView) return;
+
+    const interval = setInterval(() => {
+      setCarouselRotation((prev) => (prev + 90) % 360);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [carouselInView]);
+
+  // 👇 efeito baseado no scroll
+  const translate = scrollY * 0.3; // movimento suave
+  const opacity = Math.max(1 - scrollY / 400, 0); // fade out
+
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen overflow-hidden px-6 pt-32">
-     
-        <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-12 md:items-end">
+      <section className="relative min-h-screen overflow-hidden px-4 sm:px-6 pt-20 sm:pt-32">
+        <div className="mx-auto grid max-w-7xl gap-8 sm:gap-12 grid-cols-1 md:grid-cols-12 md:items-end">
+
+          {/* TEXTO */}
           <div className="md:col-span-7">
-           
-            <h1 className="mt-8 font-display tracking-tight" style={{ fontSize: "clamp(3.5rem, 9vw, 9rem)", lineHeight: 0.92 }}>
-              Histórias <em className="italic ">eternas</em><br />
+
+            <h1
+              className="mt-4 sm:mt-8 font-display tracking-tight will-change-transform"
+              style={{
+                fontSize: "clamp(2rem, 8vw, 9rem)",
+                lineHeight: 0.92,
+                transform: `translateY(${translate}px)`,
+                opacity: opacity,
+                transition: "transform 0.1s linear, opacity 0.1s linear",
+              }}
+            >
+              Histórias <em className="italic">eternas</em><br />
               em arte<br />
               permanente
             </h1>
-            <p className="mt-8 max-w-xl text-lg text-muted-foreground">
-            Removido
-            </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Link to="/agendamento" className="btn-shine inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3.5 text-sm font-medium text-background">
-                Agendar sessão
-                <span aria-hidden>→</span>
+
+            <div className="mt-6 sm:mt-10 flex flex-wrap items-center gap-2 sm:gap-3">
+              <Link
+                to="/agendamento"
+                className="btn-shine inline-flex items-center gap-2 sm:gap-3 rounded-full bg-foreground px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium text-background hover:scale-105 transition"
+              >
+                Agendar sessão →
               </Link>
-              <Link to="/trabalhos" className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3.5 text-sm font-medium hover:bg-secondary">
+
+              <Link
+                to="/trabalhos"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium hover:bg-secondary hover:scale-105 transition"
+              >
                 Ver trabalhos
               </Link>
             </div>
           </div>
-          <div className="md:col-span-5">
-            <div className="group relative aspect-[3/4] overflow-hidden rounded-3xl bg-secondary shadow-[var(--shadow-card)]">
+
+          {/* IMAGEM */}
+          <div className="md:col-span-5 mt-8 md:mt-0">
+            <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary shadow-[var(--shadow-card)]">
               <img
                 src={heroImg}
-                alt="Artista tatuando em ambiente cinematográfico"
-                className="img-hover h-full w-full object-cover"
-                width={1080}
-                height={1920}
+                className="img-hover h-full w-full object-cover scale-105 group-hover:scale-110 transition duration-700"
               />
-              <div className="absolute bottom-0 left-0 right-0 flex items-center justify-between p-5 text-xs">
-               
-              
-              </div>
             </div>
           </div>
-        </div>
-
-        <div className="mx-auto mt-24 grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 border-t border-border pt-10 md:grid-cols-4">
-         
         </div>
       </section>
 
       <Marquee />
 
       {/* SOBRE */}
-      <section className="px-6 py-32">
-        <div className="mx-auto grid max-w-7xl gap-16 md:grid-cols-12 md:items-center">
-          <div className="md:col-span-6">
-            <div className="group relative aspect-[4/5] overflow-hidden rounded-3xl">
-              <img src={studioImg} alt="Estúdio Inkara" className="img-hover h-full w-full object-cover" loading="lazy" width={1600} height={1200} />
-            </div>
-          </div>
-          <div className="md:col-span-6">
-          
-            <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-              Mais de 12 anos dedicados à <em className="italic ">arte da pele</em>.
-            </h2>
-            <p className="mt-8 text-lg text-muted-foreground">
-              Apaixonado pelo traço autoral, Inkara construiu uma linguagem própria que mescla técnica cinematográfica, sensibilidade narrativa e referências contemporâneas.
-            </p>
-            <Link to="/sobre" className="mt-10 inline-flex items-center gap-2 border-b border-foreground/40 pb-1 text-sm font-medium hover:border-foreground">
-              Conheça a trajetória
-              <span aria-hidden>→</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <section ref={sobreRef} className="px-4 sm:px-6 py-16 sm:py-32 overflow-hidden" style={{ perspective: "1200px" }}>
+  <div className="mx-auto grid max-w-7xl gap-8 sm:gap-16 grid-cols-1 md:grid-cols-12 md:items-center">
 
-      {/* ESTILOS */}
-      <section className="px-6 py-32">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-           
-              <h2 className="reveal mt-6 font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-                Seu desejo, minha<br /> uma <em className="italic ">arte</em>.
-              </h2>
-            </div>
-            <Link to="/estilos" className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm hover:bg-secondary">
-              Todos os estilos →
-            </Link>
-          </div>
-          <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            {styles.map((s) => (
-              <article key={s.name} className="group reveal">
-                <div className="relative aspect-[3/4] overflow-hidden rounded-2xl bg-secondary">
-                  <img src={s.img} alt={s.name} className="img-hover h-full w-full object-cover" loading="lazy" width={1024} height={1280} />
-                </div>
-                <div className="mt-4 flex items-baseline justify-between">
-                  <h3 className="font-display text-2xl tracking-tight">{s.name}</h3>
-                  <span className="font-mono text-xs text-muted-foreground">N° {s.n}</span>
-                </div>
-                <p className="mt-1 text-sm text-muted-foreground">{s.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+    {/* IMAGEM */}
+    <div 
+      className="md:col-span-6 order-2 md:order-1"
+      style={{
+        transform: sobreInView ? "rotateY(0) rotateX(0) scale(1)" : "rotateY(-35deg) rotateX(10deg) scale(0.9)",
+        opacity: sobreInView ? 1 : 0.6,
+        transition: "all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)",
+        transformStyle: "preserve-3d" as any,
+      }}
+    >
+      <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl">
+        <img
+          src={studioImg}
+          className="sobre-img h-full w-full object-cover"
+        />
 
-      {/* PROCESSO */}
-      <section className="border-t border-border bg-background px-6 py-32">
+        {/* overlay sutil */}
+        <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 transition duration-700 group-hover:opacity-100" />
+      </div>
+    </div>
+
+    {/* TEXTO */}
+    <div 
+      className="md:col-span-6 order-1 md:order-2"
+      style={{
+        transform: sobreInView ? "translateX(0) rotateZ(0)" : "translateX(60px) rotateZ(-5deg)",
+        opacity: sobreInView ? 1 : 0,
+        transition: "all 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s",
+      }}
+    >
+      <h2 className="sobre-text mt-0 md:mt-6 font-display text-3xl sm:text-5xl md:text-7xl leading-[0.95]">
+        Mais de 12 anos dedicados à <em className="italic">arte da pele</em>.
+      </h2>
+
+      <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground">
+        Apaixonado pelo traço autoral, criando experiências únicas.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+      {/* ESTILOS - CARROSEL 3D */}
+      <section ref={carouselRef} className="px-4 sm:px-6 py-16 sm:py-32" style={{ perspective: "1000px" }}>
         <div className="mx-auto max-w-7xl">
-         
-          <h2 className="reveal mt-6 max-w-4xl font-display text-5xl leading-[0.98] tracking-tight md:text-7xl">
-            Do primeiro contato ao <em className="italic">último traço</em>.
+
+          <h2 className="reveal mt-0 sm:mt-6 font-display text-3xl sm:text-5xl md:text-7xl">
+            Seu desejo, minha <em className="italic">arte</em>.
           </h2>
-          <ol className="mt-20 grid gap-px overflow-hidden rounded-3xl border border-border bg-border md:grid-cols-4">
-            {[
-              { n: "01", t: "Conversa", d: "Entendemos a sua história, referências e expectativa de duração." },
-              { n: "02", t: "Estudo", d: "Esboços autorais desenvolvidos exclusivamente para o seu corpo." },
-              { n: "03", t: "Sessão", d: "Ambiente controlado, biossegurança total e ritmo respeitado." },
-              { n: "04", t: "Cuidado", d: "Acompanhamento da cicatrização e retoque incluso após 60 dias." },
-            ].map((step) => (
-              <li key={step.n} className="reveal bg-background p-8">
-                <p className="font-mono text-xs text-muted-foreground">{step.n}</p>
-                <h3 className="mt-8 font-display text-3xl tracking-tight">{step.t}</h3>
-                <p className="mt-3 text-sm text-muted-foreground">{step.d}</p>
-              </li>
+
+          {/* CARROSEL 3D CILÍNDRICO */}
+          <div className="mt-12 sm:mt-20 flex justify-center items-center h-80 sm:h-96 perspective-1000 w-full">
+            <div
+              style={{
+                perspective: "1000px",
+                width: "100%",
+                height: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <div
+                style={{
+                  position: "relative",
+                  width: "clamp(200px, 90vw, 280px)",
+                  height: "clamp(260px, 110vw, 360px)",
+                  transformStyle: "preserve-3d",
+                  transform: `rotateY(${carouselRotation}deg)`,
+                  transition: "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                }}
+              >
+                {styles.map((s, i) => {
+                  const angle = (i / styles.length) * 360;
+                  const radius = 150;
+                  return (
+                    <div
+                      key={s.name}
+                      style={{
+                        position: "absolute",
+                        width: "clamp(200px, 90vw, 280px)",
+                        height: "clamp(260px, 110vw, 360px)",
+                        left: "50%",
+                        top: "50%",
+                        marginLeft: "calc(-50%)",
+                        marginTop: "calc(-50%)",
+                        transformStyle: "preserve-3d",
+                        transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
+                        backfaceVisibility: "hidden",
+                      }}
+                    >
+                      <div className="group relative w-full h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl">
+                        <img
+                          src={s.img}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        
+                        {/* Overlay com info */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-4 sm:p-6">
+                          <h3 className="text-lg sm:text-2xl font-bold text-white">{s.name}</h3>
+                          <p className="text-xs sm:text-sm text-white/80 mt-1 sm:mt-2 line-clamp-2">{s.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* INDICADORES */}
+          <div className="mt-8 sm:mt-12 flex justify-center items-center gap-2 sm:gap-3">
+            {styles.map((s, i) => (
+              <button
+                key={s.name}
+                onClick={() => setCarouselRotation((i / styles.length) * 360)}
+                className={`h-2 rounded-full transition-all duration-500 ${
+                  Math.round(carouselRotation) % 360 === Math.round((i / styles.length) * 360) % 360
+                    ? "bg-foreground w-6 sm:w-8"
+                    : "w-2 sm:w-2.5 bg-border hover:bg-muted-foreground"
+                }`}
+              />
             ))}
-          </ol>
+          </div>
+
+          {/* INFO EXTRA */}
+          <div className="mt-8 sm:mt-16 text-center px-2">
+            <p className="text-muted-foreground text-xs sm:text-sm">🔄 Rotaciona automaticamente • Toque/Clique nos indicadores</p>
+          </div>
         </div>
       </section>
 
       {/* DEPOIMENTOS */}
-      <section className="px-6 py-32">
+      <section className="px-4 sm:px-6 py-16 sm:py-32">
         <div className="mx-auto max-w-7xl">
+
           <Eyebrow>Depoimentos</Eyebrow>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
+
+          <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
             {testimonials.map((t, i) => (
-              <figure key={i} className="reveal flex h-full flex-col justify-between rounded-3xl border border-border bg-card p-8 shadow-[var(--shadow-soft)]">
-                <blockquote className="font-display text-2xl leading-snug tracking-tight">
+              <figure
+                key={i}
+                className="reveal rounded-2xl sm:rounded-3xl border p-4 sm:p-8 hover:shadow-xl transition duration-500"
+              >
+                <blockquote className="text-lg sm:text-2xl">
                   "{t.q}"
                 </blockquote>
-                <figcaption className="mt-10">
-                  <p className="text-sm font-medium">{t.a}</p>
-                  <p className="text-xs text-muted-foreground">{t.role}</p>
-                </figcaption>
+
+                <p className="mt-4 sm:mt-6 text-xs sm:text-sm">{t.a}</p>
               </figure>
             ))}
           </div>
