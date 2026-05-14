@@ -88,7 +88,6 @@ function Sobre() {
 
       {/* HERO */}
       <PageHero
-        eyebrow=""
         title="Tatuagem é memória — e nós tratamos como tal."
         italicWord="memória"
         subtitle="Há mais de uma década, o Inkara dedica-se ao traço autoral, à pesquisa estética e à construção de peças que duram para além da pele."
@@ -113,7 +112,6 @@ function Sobre() {
 
           {/* TEXTO */}
           <div className="md:col-span-5 space-y-6 md:space-y-8 text-muted-foreground reveal">
-            <Eyebrow>Manifesto</Eyebrow>
 
             <p className="text-base md:text-lg leading-relaxed text-foreground">
               Acreditamos em peças que respeitam o corpo, a história e o tempo
@@ -177,7 +175,6 @@ function Sobre() {
       {/* TRAJETÓRIA */}
       <section className="px-5 py-20 md:px-6 md:py-28">
         <div className="mx-auto max-w-6xl">
-          <Eyebrow>Trajetória</Eyebrow>
 
           <ol className="mt-16 space-y-16">
             {[

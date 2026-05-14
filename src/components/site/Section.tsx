@@ -15,7 +15,7 @@ export function PageHero({
   italicWord,
   subtitle,
 }: {
-  eyebrow: string;
+  eyebrow?: string;
   title: string;
   italicWord?: string;
   subtitle?: string;
@@ -25,7 +25,7 @@ export function PageHero({
   return (
     <section className="relative px-6 pb-16 pt-40">
       <div className="mx-auto max-w-6xl">
-        <Eyebrow>{eyebrow}</Eyebrow>
+        {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
 
         {/* HERO ANIMADO */}
         <h1 className="mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-[8rem] flex flex-wrap gap-x-3">

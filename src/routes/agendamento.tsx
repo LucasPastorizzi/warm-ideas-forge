@@ -12,7 +12,6 @@ function Agendamento() {
   return (
     <>
       <PageHero
-        eyebrow="Agendamento"
         title="Conte sobre o seu projeto."
         italicWord="projeto"
         subtitle="Preencha o briefing abaixo. Retornamos em até 48h úteis com uma proposta de sessão."
@@ -22,7 +21,6 @@ function Agendamento() {
         <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-12">
           <aside className="md:col-span-4 space-y-10">
             <div>
-              <Eyebrow>Como funciona</Eyebrow>
               <ol className="mt-6 space-y-4 text-sm">
                 <li><span className="font-mono text-muted-foreground mr-2">01</span> Você envia o briefing</li>
                 <li><span className="font-mono text-muted-foreground mr-2">02</span> Conversamos sobre referências</li>
@@ -31,7 +29,6 @@ function Agendamento() {
               </ol>
             </div>
             <div>
-              <Eyebrow>Investimento</Eyebrow>
               <p className="mt-6 text-sm text-muted-foreground">
                 A partir de R$ 800/sessão. O orçamento final depende de tamanho, complexidade e localização da peça.
               </p>

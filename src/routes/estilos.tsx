@@ -21,7 +21,6 @@ function Estilos() {
   return (
     <>
       <PageHero
-        eyebrow="Estilos"
         title="Quatro linguagens, uma assinatura."
         italicWord="assinatura"
         subtitle="Trabalhamos com os estilos que melhor traduzem o conceito autoral do estúdio."

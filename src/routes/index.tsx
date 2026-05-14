@@ -171,7 +171,6 @@ function Index() {
       <section className="px-4 sm:px-6 py-16 sm:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl">
 
-          <Eyebrow>Portfólio</Eyebrow>
 
           <h2 className="mt-4 font-display text-3xl sm:text-5xl md:text-6xl leading-[0.95] max-w-xl">
             Projetos que ficam <em className="italic">para sempre</em>.
@@ -348,7 +347,6 @@ function Index() {
       <section className="px-4 sm:px-6 py-16 sm:py-32">
         <div className="mx-auto max-w-7xl">
 
-          <Eyebrow>Depoimentos</Eyebrow>
 
           <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
             {testimonials.map((t, i) => (

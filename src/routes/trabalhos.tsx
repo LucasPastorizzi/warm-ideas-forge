@@ -47,7 +47,6 @@ function Trabalhos() {
   return (
     <>
       <PageHero
-        eyebrow="Portfólio"
         title="Cada peça, uma história única."
         subtitle="Uma seleção curada de projetos autorais realizados nos últimos anos."
       />
