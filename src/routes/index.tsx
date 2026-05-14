@@ -8,6 +8,23 @@ import workFineline from "@/assets/work-fineline.jpg";
 import workRealismo from "@/assets/work-realismo.jpg";
 import workOriental from "@/assets/work-oriental.jpg";
 
+
+
+import img1 from "@/assets/iloveimg-converted/IMG_2703.jpg";
+import img2 from "@/assets/iloveimg-converted/IMG_0466.jpg";
+import img3 from "@/assets/iloveimg-converted/IMG_0684.jpg";
+import img4 from "@/assets/iloveimg-converted/IMG_1853.jpg";
+import img5 from "@/assets/iloveimg-converted/IMG_1859.jpg";
+import img6 from "@/assets/iloveimg-converted/IMG_2357.jpg";
+import img7  from "@/assets/iloveimg-converted/IMG_2271.jpg";
+import img8  from "@/assets/iloveimg-converted/IMG_2367.jpg";
+
+
+
+
+
+
+
 import { Marquee } from "@/components/site/Marquee";
 import { Eyebrow } from "@/components/site/Section";
 
@@ -188,149 +205,125 @@ function Index() {
               position: "relative",
             }}
           >
-            {/* Foto grande — topo esquerda */}
-            <div
-              style={{
-                gridColumn: "1 / span 5",
-                gridRow: "1 / span 5",
-                transform: "rotate(-2deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px 4px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 2,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#222", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 1</span>
-              </div>
-            </div>
+         {/* Foto grande — topo esquerda */}
+<div
+  style={{
+    gridColumn: "1 / span 5",
+    gridRow: "1 / span 5",
+    transform: "rotate(-2deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px 4px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 2,
+  }}
+>
+  <img src={img1} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto média — topo centro */}
-            <div
-              style={{
-                gridColumn: "5 / span 4",
-                gridRow: "1 / span 4",
-                transform: "rotate(1.5deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px 4px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 3,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#2a2a2a", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 2</span>
-              </div>
-            </div>
+{/* Foto média — topo centro */}
+<div
+  style={{
+    gridColumn: "5 / span 4",
+    gridRow: "1 / span 4",
+    transform: "rotate(1.5deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px 4px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 3,
+  }}
+>
+  <img src={img2} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto alta — direita topo */}
-            <div
-              style={{
-                gridColumn: "9 / span 4",
-                gridRow: "1 / span 6",
-                transform: "rotate(-1deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 3px 3px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 2,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#1f1f1f", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 3</span>
-              </div>
-            </div>
+{/* Foto alta — direita topo */}
+<div
+  style={{
+    gridColumn: "9 / span 4",
+    gridRow: "1 / span 6",
+    transform: "rotate(-1deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 3px 3px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 2,
+  }}
+>
+  <img src={img3} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto quadrada — meio esquerda */}
-            <div
-              style={{
-                gridColumn: "1 / span 4",
-                gridRow: "6 / span 4",
-                transform: "rotate(2.5deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px -2px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 4,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#252525", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 4</span>
-              </div>
-            </div>
+{/* Foto quadrada — meio esquerda */}
+<div
+  style={{
+    gridColumn: "1 / span 4",
+    gridRow: "6 / span 4",
+    transform: "rotate(2.5deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px -2px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 4,
+  }}
+>
+  <img src={img4} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto paisagem — meio centro */}
-            <div
-              style={{
-                gridColumn: "5 / span 5",
-                gridRow: "5 / span 3",
-                transform: "rotate(-1.8deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -2px -2px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 3,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#202020", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 5</span>
-              </div>
-            </div>
+{/* Foto paisagem — meio centro */}
+<div
+  style={{
+    gridColumn: "5 / span 5",
+    gridRow: "5 / span 3",
+    transform: "rotate(-1.8deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -2px -2px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 3,
+  }}
+>
+  <img src={img5} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto quadrada — baixo direita */}
-            <div
-              style={{
-                gridColumn: "9 / span 4",
-                gridRow: "7 / span 4",
-                transform: "rotate(1.2deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px -3px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 2,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#272727", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 6</span>
-              </div>
-            </div>
+{/* Foto quadrada — baixo direita */}
+<div
+  style={{
+    gridColumn: "9 / span 4",
+    gridRow: "7 / span 4",
+    transform: "rotate(1.2deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px -3px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 2,
+  }}
+>
+  <img src={img6} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto larga — fundo esquerda */}
-            <div
-              style={{
-                gridColumn: "2 / span 6",
-                gridRow: "10 / span 4",
-                transform: "rotate(-0.8deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 2px 2px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 3,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#212121", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 7</span>
-              </div>
-            </div>
+{/* Foto larga — fundo esquerda */}
+<div
+  style={{
+    gridColumn: "2 / span 6",
+    gridRow: "10 / span 4",
+    transform: "rotate(-0.8deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 2px 2px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 3,
+  }}
+>
+  <img src={img7} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
 
-            {/* Foto alta — fundo direita */}
-            <div
-              style={{
-                gridColumn: "8 / span 5",
-                gridRow: "11 / span 3",
-                transform: "rotate(2deg)",
-                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -4px 2px 0 rgba(0,0,0,0.12)",
-                borderRadius: "6px",
-                overflow: "hidden",
-                zIndex: 2,
-                background: "#1a1a1a",
-              }}
-            >
-              <div style={{ width: "100%", height: "100%", background: "#242424", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 8</span>
-              </div>
-            </div>
+{/* Foto alta — fundo direita */}
+<div
+  style={{
+    gridColumn: "8 / span 5",
+    gridRow: "11 / span 3",
+    transform: "rotate(2deg)",
+    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -4px 2px 0 rgba(0,0,0,0.12)",
+    borderRadius: "6px",
+    overflow: "hidden",
+    zIndex: 2,
+  }}
+>
+  <img src={img8} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+</div>
           </div>
 
           <div className="mt-10 sm:mt-14 text-center">
