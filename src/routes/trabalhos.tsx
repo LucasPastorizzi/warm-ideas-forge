@@ -25,30 +25,30 @@ const slots: {
   z: number;
 }[] = [
   // Linha 1
-  { img: workBlackwork,  t: "Serpente Floral",   style: "Blackwork", year: "2025", col: "1 / span 5",  row: "1 / span 6",  rot: -1.8, z: 2 },
-  { img: workFineline,   t: "Botânica",           style: "Fine Line", year: "2025", col: "5 / span 4",  row: "1 / span 4",  rot:  1.2, z: 3 },
-  { img: workOriental,   t: "Sleeve Koi",         style: "Oriental",  year: "2024", col: "9 / span 4",  row: "1 / span 5",  rot: -0.8, z: 2 },
-  { img: workRealismo,   t: "Retrato em pele",    style: "Realismo",  year: "2024", col: "13 / span 4", row: "1 / span 6",  rot:  2.1, z: 3 },
+  { img: workRealismo,   t: "Retrato — D'Alessandro", style: "Retrato",    year: "2024", col: "1 / span 5",  row: "1 / span 6",  rot: -1.8, z: 2 },
+  { img: workFineline,   t: "Guepardo",               style: "Realismo",   year: "2025", col: "5 / span 4",  row: "1 / span 4",  rot:  1.2, z: 3 },
+  { img: workOriental,   t: "Manga Preto e Cinza",    style: "Fechamento", year: "2024", col: "9 / span 4",  row: "1 / span 5",  rot: -0.8, z: 2 },
+  { img: workBlackwork,  t: "Leão Realista",          style: "Realismo",   year: "2024", col: "13 / span 4", row: "1 / span 6",  rot:  2.1, z: 3 },
 
   // Linha 2
-  { img: workFineline,   t: "Linha do Horizonte", style: "Fine Line", year: "2023", col: "2 / span 4",  row: "7 / span 4",  rot:  2.4, z: 4 },
-  { img: workBlackwork,  t: "Mandala Dorso",      style: "Blackwork", year: "2023", col: "6 / span 5",  row: "5 / span 5",  rot: -1.5, z: 3 },
-  { img: workOriental,   t: "Crisântemo",         style: "Oriental",  year: "2024", col: "11 / span 3", row: "6 / span 4",  rot:  0.9, z: 2 },
-  { img: workRealismo,   t: "Ancestral",          style: "Realismo",  year: "2022", col: "14 / span 3", row: "7 / span 5",  rot: -2.0, z: 3 },
+  { img: workFineline,   t: "Lobo Cinza",          style: "Realismo",   year: "2023", col: "2 / span 4",  row: "7 / span 4",  rot:  2.4, z: 4 },
+  { img: workBlackwork,  t: "Retrato Masculino",   style: "Retrato",    year: "2023", col: "6 / span 5",  row: "5 / span 5",  rot: -1.5, z: 3 },
+  { img: workOriental,   t: "Manga Completa",      style: "Fechamento", year: "2024", col: "11 / span 3", row: "6 / span 4",  rot:  0.9, z: 2 },
+  { img: workRealismo,   t: "Pantera",             style: "Realismo",   year: "2022", col: "14 / span 3", row: "7 / span 5",  rot: -2.0, z: 3 },
 
   // Linha 3
-  { img: workBlackwork,  t: "Corvus",             style: "Blackwork", year: "2025", col: "1 / span 4",  row: "11 / span 5", rot:  1.6, z: 2 },
-  { img: workRealismo,   t: "Ofélia",             style: "Realismo",  year: "2024", col: "5 / span 6",  row: "10 / span 6", rot: -1.0, z: 3 },
-  { img: workFineline,   t: "Fênix Traço",        style: "Fine Line", year: "2025", col: "11 / span 3", row: "10 / span 4", rot:  2.8, z: 4 },
-  { img: workOriental,   t: "Dragão Oriental",    style: "Oriental",  year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
+  { img: workBlackwork,  t: "Preto e Sombra",      style: "Realismo",   year: "2025", col: "1 / span 4",  row: "11 / span 5", rot:  1.6, z: 2 },
+  { img: workRealismo,   t: "Retrato Feminino",    style: "Retrato",    year: "2024", col: "5 / span 6",  row: "10 / span 6", rot: -1.0, z: 3 },
+  { img: workFineline,   t: "Textura Animal",      style: "Realismo",   year: "2025", col: "11 / span 3", row: "10 / span 4", rot:  2.8, z: 4 },
+  { img: workOriental,   t: "Fechamento Perna",    style: "Fechamento", year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
 ];
 
 function Trabalhos() {
   return (
     <>
       <PageHero
-        title="Cada peça, uma história única."
-        subtitle="Uma seleção curada de projetos autorais realizados nos últimos anos."
+        title="O trabalho fala por si mesmo."
+        subtitle="Mais de 1.200 sessões realizadas desde 2012. Retratos, animais, fechamentos e puras obras de realismo — cada peça, uma história real."
       />
 
       {/* GALERIA ORGÂNICA — margens mínimas para fotos quase tocarem as bordas */}

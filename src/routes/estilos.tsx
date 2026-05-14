@@ -11,11 +11,11 @@ export const Route = createFileRoute("/estilos")({
   component: Estilos,
   head: () => ({
     meta: [
-      { title: "Estilos — Inkara Studio" },
+      { title: "Estilos — Mineiro Tattoo" },
       {
         name: "description",
         content:
-          "Estilos dominados pelo estúdio Inkara: Blackwork, Fine Line, Realismo, Oriental e mais.",
+          "Especialidades do Mineiro Tattoo: realismo, preto e cinza, retratos e fechamentos de alto nível em Ivoti, RS.",
       },
     ],
   }),
@@ -24,27 +24,27 @@ export const Route = createFileRoute("/estilos")({
 const styles = [
   {
     n: "01",
-    name: "Blackwork",
-    img: workBlackwork,
-    desc: "Sólidos profundos, ornamentação simbólica e altíssimo contraste. Ideal para peças de impacto e longa permanência visual.",
+    name: "Realismo",
+    img: workRealismo,
+    desc: "A especialidade principal do Mineiro. Profundidade fotográfica, textura real e contraste impossível de ignorar. Cada peça parece saltar da pele.",
   },
   {
     n: "02",
-    name: "Fine Line",
-    img: workFineline,
-    desc: "Traço único, micro-detalhe e delicadeza. Perfeito para botânicas, escritas e composições minimalistas.",
+    name: "Preto e Cinza",
+    img: workBlackwork,
+    desc: "Domínio total de sombras, meio-tons e acabamento duradouro. A base de toda grande tattoo de realismo executada com precisão cirúrgica.",
   },
   {
     n: "03",
-    name: "Realismo",
-    img: workRealismo,
-    desc: "Profundidade fotográfica em preto e cinza, com construção em camadas e foco narrativo.",
+    name: "Retratos",
+    img: workFineline,
+    desc: "Pessoas, ídolos, animais — eternizados com fidelidade na pele. Referência regional nesse estilo que exige técnica e sensibilidade ao mesmo tempo.",
   },
   {
     n: "04",
-    name: "Oriental",
+    name: "Fechamentos",
     img: workOriental,
-    desc: "Tradição irezumi, cor saturada, fluxo orgânico do desenho ao corpo.",
+    desc: "Mangas de braço, fechamentos de perna e composições grandes, planejadas para fluir com o corpo e manter impacto por décadas.",
   },
 ];
 
@@ -72,9 +72,9 @@ function Estilos() {
     <>
       <PageHero
         eyebrow=""
-        title="Quatro linguagens, uma assinatura."
-        italicWord="assinatura"
-        subtitle="Trabalhamos com os estilos que melhor traduzem o conceito autoral do estúdio."
+        title="Uma especialidade. Executada com obsessão."
+        italicWord="obsessão"
+        subtitle="O Mineiro Tattoo é conhecido por um estilo só: fazer o realismo com o mais alto nível técnico possível. Sem atalhos."
       />
 
       <section className="px-5 md:px-6 pb-28 md:pb-36">

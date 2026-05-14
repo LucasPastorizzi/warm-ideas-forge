@@ -3,7 +3,7 @@ import { PageHero, Eyebrow } from "@/components/site/Section";
 
 export const Route = createFileRoute("/contato")({
   component: Contato,
-  head: () => ({ meta: [{ title: "Contato — Inkara Studio" }, { name: "description", content: "Endereço, horários e canais de contato do estúdio Inkara em São Paulo." }] }),
+  head: () => ({ meta: [{ title: "Contato — Mineiro Tattoo" }, { name: "description", content: "Endereço, horários e canais de contato do Mineiro Tattoo em Ivoti, RS." }] }),
 });
 
 function Contato() {
@@ -11,16 +11,16 @@ function Contato() {
     <>
       <PageHero
         eyebrow="Contato"
-        title="Estamos por aqui."
-        italicWord="aqui"
-        subtitle="Visite o estúdio, mande mensagem ou acompanhe nossos próximos projetos."
+        title="Venha nos encontrar."
+        italicWord="encontrar"
+        subtitle="Estamos em Ivoti, RS. Atendimento presencial com horário agendado. Mande mensagem pelo Instagram ou pelo formulário."
       />
       <section className="px-6 pb-32">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3">
           {[
-            { h: "Endereço", l: ["Rua das Palmeiras, 432", "Vila Madalena · SP", "01234-000"] },
-            { h: "Horário", l: ["Terça a Sábado", "11h às 20h", "Atendimento agendado"] },
-            { h: "Canais", l: ["@inkara.studio", "ola@inkara.studio", "+55 11 99999-9999"] },
+            { h: "Endereço", l: ["R. Cel. Gaelzer Neto, 40", "Centro · Ivoti, RS", "CEP 93.900-000"] },
+            { h: "Horário", l: ["Segunda a Sábado", "9h às 18h", "Somente com agendamento"] },
+            { h: "Canais", l: ["@mineiro_tattoo", "Instagram / WhatsApp", "Ivoti · Vale dos Sinos, RS"] },
           ].map((c) => (
             <div key={c.h} className="reveal rounded-3xl border border-border bg-card p-8">
               <Eyebrow>{c.h}</Eyebrow>

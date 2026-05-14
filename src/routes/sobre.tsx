@@ -7,11 +7,11 @@ export const Route = createFileRoute("/sobre")({
   component: Sobre,
   head: () => ({
     meta: [
-      { title: "Sobre — Inkara Studio" },
+      { title: "Sobre — Mineiro Tattoo" },
       {
         name: "description",
         content:
-          "Conheça a trajetória, valores e processo do estúdio Inkara.",
+          "Conheça a história do Mineiro Tattoo: mais de 13 anos de realismo de alto nível em Ivoti, RS.",
       },
     ],
   }),
@@ -88,9 +88,9 @@ function Sobre() {
 
       {/* HERO */}
       <PageHero
-        title="Tatuagem é memória — e nós tratamos como tal."
-        italicWord="memória"
-        subtitle="Há mais de uma década, o Inkara dedica-se ao traço autoral, à pesquisa estética e à construção de peças que duram para além da pele."
+        title="13 anos. Mais de mil histórias tatuadas."
+        italicWord="histórias"
+        subtitle="Fabiano \"Mineiro\" Oliveira é tatuador profissional em Ivoti, RS. Especializado em realismo, reconhecido no Vale dos Sinos e presente nos maiores eventos de tattoo do Brasil."
       />
 
       {/* SOBRE */}
@@ -114,15 +114,13 @@ function Sobre() {
           <div className="md:col-span-5 space-y-6 md:space-y-8 text-muted-foreground reveal">
 
             <p className="text-base md:text-lg leading-relaxed text-foreground">
-              Acreditamos em peças que respeitam o corpo, a história e o tempo
-              de cada pessoa. Cada projeto é único, autoral, e construído em
-              parceria.
+              O Mineiro não é um tatuador de volume. É um artista que leva cada peça a sério —
+              desde a primeira conversa até o resultado final na pele.
             </p>
 
             <p className="text-sm md:text-base">
-              Nosso estúdio em Vila Madalena foi pensado como um espaço de
-              imersão: luz quente, silêncio quando preciso, conversa quando
-              convém — e biossegurança total em todas as etapas.
+              Seu estúdio em Ivoti foi construído com foco em biossegurança, conforto e uma religião:
+              esterilização completa em cada sessão. Não existe atalho quando se trata de qualidade e saúde.
             </p>
           </div>
         </div>
@@ -178,10 +176,10 @@ function Sobre() {
 
           <ol className="mt-16 space-y-16">
             {[
-              { y: "2013", t: "Primeiros traços", d: "Início da formação..." },
-              { y: "2017", t: "Inkara nasce", d: "Abertura do estúdio..." },
-              { y: "2021", t: "Linguagem própria", d: "Assinatura visual..." },
-              { y: "2025", t: "Hoje", d: "Mais de 1.200 sessões..." },
+              { y: "2012", t: "O início oficial", d: "Abertura do Mineiro Tattoo em Ivoti, RS. CNPJ ativo desde abril de 2012, com foco em realismo desde o primeiro dia." },
+              { y: "2015", t: "Primeiras convenções", d: "Participação em eventos regionais e expansão da reputação no Vale dos Sinos e região metropolitana de Porto Alegre." },
+              { y: "2019", t: "Nomes grandes na pele", d: "Tattoos em jogadores como Andrés D\u2019Alessandro, Gabiru e Patrício consolidam a referência da marca no circuito profissional." },
+              { y: "2023", t: "Tattoo Week", d: "Representa Ivoti e o RS na Tattoo Week, uma das maiores competições de tatuagem do mundo. Mais de 1.200 sessões realizadas." },
             ].map((s, i) => (
               <li
                 key={s.y}

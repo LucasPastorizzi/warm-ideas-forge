@@ -16,16 +16,16 @@ export const Route = createFileRoute("/")({
 });
 
 const styles = [
-  { n: "01", name: "Blackwork", img: workBlackwork, desc: "Sólidos profundos, ornamentos, simbologia." },
-  { n: "02", name: "Fine Line", img: workFineline, desc: "Traço único, delicadeza, minimalismo." },
-  { n: "03", name: "Realismo", img: workRealismo, desc: "Retratos, profundidade, narrativa visual." },
-  { n: "04", name: "Oriental", img: workOriental, desc: "Cor saturada, fluxo, tradição irezumi." },
+  { n: "01", name: "Realismo", img: workRealismo, desc: "Retratos, animais e composições com profundidade fotográfica e textura real." },
+  { n: "02", name: "Preto e Cinza", img: workBlackwork, desc: "Contraste forte, sombras ricas e acabamento duradouro." },
+  { n: "03", name: "Fechamentos", img: workFineline, desc: "Braço, perna e mangas completas executadas com precisão." },
+  { n: "04", name: "Retratos", img: workOriental, desc: "Pessoas, ídolos e momentos eternizados com fidelidade na pele." },
 ];
 
 const testimonials = [
-  { q: "É como vestir uma obra de arte. Cada detalhe pensado para mim.", a: "Marina V." },
-  { q: "Inkara entendeu uma história que eu mal sabia contar — e a desenhou na minha pele.", a: "Rafael C." },
-  { q: "O processo é quase ritualístico. O resultado é único.", a: "Helena S." },
+  { q: "O Mineiro entendeu exatamente o que eu queria. O realismo ficou perfeito — parece uma foto na minha pele.", a: "Lucas R." },
+  { q: "Fui indicado por um amigo e não me arrependo. Profissionalismo do começo ao fim, ambiente impecável.", a: "Carla M." },
+  { q: "Já fiz três sessões e cada uma superou a anterior. Referência total em realismo no Vale dos Sinos.", a: "Diego F." },
 ];
 
 function Index() {
@@ -85,9 +85,9 @@ function Index() {
                 transition: "transform 0.1s linear, opacity 0.1s linear",
               }}
             >
-              Histórias <em className="italic">eternas</em><br />
-              em arte<br />
-              permanente
+              Realismo <em className="italic">que</em><br />
+              marca pra<br />
+              sempre
             </h1>
 
             <div className="mt-6 sm:mt-10 flex flex-wrap items-center gap-2 sm:gap-3">
@@ -102,7 +102,7 @@ function Index() {
                 to="/trabalhos"
                 className="inline-flex items-center gap-2 rounded-full border border-border px-4 sm:px-6 py-2.5 sm:py-3.5 text-xs sm:text-sm font-medium hover:bg-secondary hover:scale-105 transition"
               >
-                Ver trabalhos
+                Ver o portfólio
               </Link>
             </div>
           </div>
@@ -156,11 +156,12 @@ function Index() {
             }}
           >
             <h2 className="sobre-text mt-0 md:mt-6 font-display text-3xl sm:text-5xl md:text-7xl leading-[0.95]">
-              Mais de 12 anos dedicados à <em className="italic">arte da pele</em>.
+              Mais de 13 anos gravando histórias <em className="italic">reais</em>.
             </h2>
 
             <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground">
-              Apaixonado pelo traço autoral, criando experiências únicas.
+              Fabiano "Mineiro" Oliveira é referência em realismo no Vale dos Sinos.
+              Desde 2012 em Ivoti, constrói peças de alto nível técnico com foco em retratos, animais e fechamentos.
             </p>
           </div>
 
@@ -173,7 +174,7 @@ function Index() {
 
 
           <h2 className="mt-4 font-display text-3xl sm:text-5xl md:text-6xl leading-[0.95] max-w-xl">
-            Projetos que ficam <em className="italic">para sempre</em>.
+            Trabalhos que ficam <em className="italic">para sempre</em>.
           </h2>
 
           {/* GRADE ORGÂNICA */}
@@ -337,7 +338,7 @@ function Index() {
               to="/trabalhos"
               className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-secondary hover:scale-105 transition"
             >
-              Ver todos os trabalhos →
+              Ver o portfólio completo →
             </Link>
           </div>
         </div>

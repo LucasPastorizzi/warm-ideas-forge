@@ -4,7 +4,7 @@ import { PageHero, Eyebrow } from "@/components/site/Section";
 
 export const Route = createFileRoute("/agendamento")({
   component: Agendamento,
-  head: () => ({ meta: [{ title: "Agendamento — Inkara Studio" }, { name: "description", content: "Solicite seu projeto autoral no estúdio Inkara." }] }),
+  head: () => ({ meta: [{ title: "Agendamento — Mineiro Tattoo" }, { name: "description", content: "Solicite sua sessão de tatuagem com o Mineiro Tattoo em Ivoti, RS. Especialista em realismo." }] }),
 });
 
 function Agendamento() {
@@ -12,9 +12,9 @@ function Agendamento() {
   return (
     <>
       <PageHero
-        title="Conte sobre o seu projeto."
+        title="Vamos conversar sobre o seu projeto."
         italicWord="projeto"
-        subtitle="Preencha o briefing abaixo. Retornamos em até 48h úteis com uma proposta de sessão."
+        subtitle="Preencha o formulário abaixo com os detalhes da sua ideia. O Mineiro retorna em até 48h úteis com disponibilidade e orçamento."
       />
 
       <section className="px-6 pb-32">
@@ -22,15 +22,16 @@ function Agendamento() {
           <aside className="md:col-span-4 space-y-10">
             <div>
               <ol className="mt-6 space-y-4 text-sm">
-                <li><span className="font-mono text-muted-foreground mr-2">01</span> Você envia o briefing</li>
-                <li><span className="font-mono text-muted-foreground mr-2">02</span> Conversamos sobre referências</li>
-                <li><span className="font-mono text-muted-foreground mr-2">03</span> Estudo autoral exclusivo</li>
-                <li><span className="font-mono text-muted-foreground mr-2">04</span> Sessão agendada</li>
+                <li><span className="font-mono text-muted-foreground mr-2">01</span> Você preenche o formulário</li>
+                <li><span className="font-mono text-muted-foreground mr-2">02</span> O Mineiro avalia e retorna</li>
+                <li><span className="font-mono text-muted-foreground mr-2">03</span> Criamos um projeto exclusivo</li>
+                <li><span className="font-mono text-muted-foreground mr-2">04</span> Sessão agendada em Ivoti</li>
               </ol>
             </div>
             <div>
               <p className="mt-6 text-sm text-muted-foreground">
-                A partir de R$ 800/sessão. O orçamento final depende de tamanho, complexidade e localização da peça.
+                Valor por sessão varia conforme tamanho, complexidade e localização da peça.
+                Consulte durante o atendimento.
               </p>
             </div>
           </aside>
