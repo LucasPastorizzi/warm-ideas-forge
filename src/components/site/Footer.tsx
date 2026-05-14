@@ -29,77 +29,34 @@ export function Footer() {
     >
       <div className="footer-inner mx-auto max-w-[1600px] px-5 md:px-10">
 
-        {/* TOP */}
-        <div className="footer-block grid gap-12 md:gap-16 md:grid-cols-12">
+        {/* NAV COLUMNS — centrado */}
+        <div className="footer-block flex flex-wrap justify-center gap-28 md:gap-40">
 
-          {/* LEFT */}
-          <div className="md:col-span-6">
+          <FooterCol
+            title="Navegar"
+            items={[
+              { label: "Sobre", to: "/sobre" },
+              { label: "Trabalhos", to: "/trabalhos" },
+              { label: "Estilos", to: "/estilos" },
+            ]}
+          />
 
-            <div className="flex items-center gap-3">
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-black/[0.03]">
-                <PenTool size={16} className="text-black" />
-              </span>
+          <FooterCol
+            title="Estúdio"
+            items={[
+              { label: "Agendar", to: "/agendamento" },
+              { label: "Contato", to: "/contato" },
+            ]}
+          />
 
-              <div>
-                <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                  Estúdio · São Paulo
-                </p>
-
-                <p className="mt-1 text-sm text-black/70">
-                  Mineiro Tattoo Studio
-                </p>
-              </div>
-            </div>
-
-            <h2
-              className="mt-6 font-display text-black leading-[1] tracking-tight"
-              style={{ fontSize: "clamp(2.2rem, 6vw, 6rem)" }}
-            >
-              Vamos transformar a sua{" "}
-              <em className="italic">história</em> em arte.
-            </h2>
-
-            <Link
-              to="/agendamento"
-              className="footer-cta mt-8 inline-flex items-center gap-3 rounded-full bg-black px-6 py-3 text-sm text-white transition hover:scale-[1.03]"
-            >
-              Agendar uma sessão →
-            </Link>
-          </div>
-
-          {/* RIGHT */}
-          <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 md:col-span-6 md:grid-cols-3">
-
-            <FooterCol
-              title="Navegar"
-              items={[
-                { label: "Sobre", to: "/sobre" },
-                { label: "Trabalhos", to: "/trabalhos" },
-                { label: "Estilos", to: "/estilos" },
-              ]}
-            />
-
-            <FooterCol
-              title="Estúdio"
-              items={[
-                { label: "Agendar", to: "/agendamento" },
-                { label: "Contato", to: "/contato" },
-              ]}
-            />
-
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Visite
-              </p>
-
-              <p className="mt-4 text-sm leading-relaxed text-foreground/80">
-                Rua das Palmeiras, 432
-                <br />
-                Vila Madalena · SP
-                <br />
-                Ter–Sáb · 11h às 20h
-              </p>
-            </div>
+          <div>
+            <p className="mt-0 text-sm leading-relaxed text-foreground/80">
+              R. Cel. Gaelzer Neto, 40
+              <br />
+              Centro · Ivoti, RS
+              <br />
+              Seg–Sáb · 9h às 18h
+            </p>
           </div>
         </div>
 
@@ -147,7 +104,7 @@ export function Footer() {
           </p>
 
           <p className="text-center font-mono uppercase tracking-[0.3em]">
-            Tatuagem autoral · 12 anos
+            Por Flypi <img src="" alt="" />
           </p>
         </div>
       </div>
@@ -257,11 +214,7 @@ function FooterCol({
 }) {
   return (
     <div>
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        {title}
-      </p>
-
-      <ul className="mt-4 space-y-3 text-sm">
+      <ul className="space-y-3 text-sm">
         {items.map((i) => (
           <li key={i.to}>
             <Link to={i.to} className="transition hover:opacity-60">
