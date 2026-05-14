@@ -18,7 +18,7 @@ export const Route = createFileRoute("/contato")({
 function Contato() {
   return (
     <>
-      <PageHero  title="Canais de Contato" centered />
+      <PageHero title="Canais de Contato" centered />
 
       <section className="px-6 pb-32">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3">
@@ -46,9 +46,9 @@ function Contato() {
             {
               h: "Canais",
               l: [
-                { text: "@mineiro_tattoo", href: "https://instagram.com/mineiro_tattoo" },
                 { text: "Instagram", href: "https://instagram.com/mineiro_tattoo" },
-                { text: "WhatsApp", href: "/agendamento" },
+                { text: "WhatsApp", href: "https://wa.me/5196475674" },
+                { text: "Facebook", href: "https://www.facebook.com/p/Mineiro-Tattoo-100063480282721/" },
               ],
             },
           ].map((c, index) => (

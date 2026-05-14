@@ -16,7 +16,7 @@ export const Route = createFileRoute("/agendamento")({
 });
 
 function Agendamento() {
-  const whatsappNumber = "5551999999999"; // <- troca pelo número real com DDI
+  const whatsappNumber = "555196475674"; // <- troca pelo número real com DDI
   const message = encodeURIComponent(
     `Olá! Vim pelo site e gostaria de fazer um orçamento para tatuagem.
 
@@ -27,7 +27,7 @@ Tamanho aproximado:
 Ideia / referência:`
   );
 
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+  const whatsappLink = `https://wa.me/${555196475674}?text=${'Olá! Gostaria de agendar um horário!'}`;
 
   return (
     <>
