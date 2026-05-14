@@ -88,15 +88,14 @@ function Sobre() {
 
       {/* HERO */}
       <PageHero
-        title="13 anos. Mais de mil histórias tatuadas."
-        italicWord="histórias"
-        subtitle="Fabiano \"Mineiro\" Oliveira é tatuador profissional em Ivoti, RS. Especializado em realismo, reconhecido no Vale dos Sinos e presente nos maiores eventos de tattoo do Brasil."
+        title="13 anos de mercado mais de mil histórias feitas na pele."
+        subtitle={<>Fabiano <strong>"Mineiro"</strong> Oliveira é tatuador profissional em Ivoti, RS. Especializado em realismo, reconhecido no Vale dos Sinos e presente nos maiores eventos de tattoo do Brasil.</>}
       />
 
       {/* SOBRE */}
       <section className="px-5 py-20 md:px-6 md:py-28">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-12 md:gap-20 md:items-center">
-          
+
           {/* IMAGEM */}
           <div className="md:col-span-7 reveal">
             <div className="overflow-hidden rounded-3xl group">
@@ -128,47 +127,47 @@ function Sobre() {
 
       {/* SEÇÃO PRETA FULL */}
       <section
-  id="black-section"
-  className="relative w-screen left-1/2 -translate-x-1/2 min-h-screen flex items-center overflow-hidden"
->
-  {/* IMAGEM DE FUNDO */}
- <img
-  id="bg-img"
-  src={studioImg}
-  alt=""
-  className="absolute inset-0 h-full w-full object-cover will-change-transform transition-transform duration-300"
-/>
+        id="black-section"
+        className="relative w-screen left-1/2 -translate-x-1/2 min-h-screen flex items-center overflow-hidden"
+      >
+        {/* IMAGEM DE FUNDO */}
+        <img
+          id="bg-img"
+          src={studioImg}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover will-change-transform transition-transform duration-300"
+        />
 
-  {/* OVERLAY ESCURO (ESSENCIAL) */}
-  <div className="absolute inset-0 bg-black/70" />
+        {/* OVERLAY ESCURO (ESSENCIAL) */}
+        <div className="absolute inset-0 bg-black/70" />
 
-  {/* GRADIENTE SUAVE (profundidade) */}
-  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        {/* GRADIENTE SUAVE (profundidade) */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
 
-  {/* GLOW */}
-  <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
+        {/* GLOW */}
+        <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)]" />
 
-  {/* CONTEÚDO */}
-  <div className="relative mx-auto max-w-4xl px-5 md:px-6 text-center reveal text-white">
-  
+        {/* CONTEÚDO */}
+        <div className="relative mx-auto max-w-4xl px-5 md:px-6 text-center reveal text-white">
 
-    <h2 className="mt-8 font-display text-3xl md:text-6xl leading-tight">
-      Não fazemos apenas tatuagens.
-      <span className="block text-white/70">
-        Criamos marcas que atravessam o tempo.
-      </span>
-    </h2>
 
-    <p className="mx-auto mt-8 max-w-2xl text-sm md:text-lg text-white/60">
-      Cada traço é pensado, cada detalhe é intencional. O corpo é a tela,
-      mas a história é o que realmente importa.
-    </p>
-  </div>
+          <h2 className="mt-8 font-display text-3xl md:text-6xl leading-tight">
+            Não fazemos apenas tatuagens.
+            <span className="block text-white/70">
+              Criamos marcas que atravessam o tempo.
+            </span>
+          </h2>
 
-  {/* FADES */}
-  <div className="absolute top-0 left-0 h-24 w-full bg-gradient-to-b from-black to-transparent" />
-  <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-black to-transparent" />
-</section>
+          <p className="mx-auto mt-8 max-w-2xl text-sm md:text-lg text-white/60">
+            Cada traço é pensado, cada detalhe é intencional. O corpo é a tela,
+            mas a história é o que realmente importa.
+          </p>
+        </div>
+
+        {/* FADES */}
+        <div className="absolute top-0 left-0 h-24 w-full bg-gradient-to-b from-black to-transparent" />
+        <div className="absolute bottom-0 left-0 h-24 w-full bg-gradient-to-t from-black to-transparent" />
+      </section>
 
       {/* TRAJETÓRIA */}
       <section className="px-5 py-20 md:px-6 md:py-28">
@@ -205,8 +204,8 @@ function Sobre() {
       </section>
 
       {/* ANIMAÇÃO GLOBAL */}
-     <style>
-{`
+      <style>
+        {`
   .reveal {
     opacity: 0;
     transform: translateY(60px);
@@ -254,7 +253,7 @@ function Sobre() {
     }
   }
 `}
-</style>
+      </style>
     </>
   );
 }

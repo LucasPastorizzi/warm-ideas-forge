@@ -18,7 +18,7 @@ export function PageHero({
   eyebrow?: string;
   title: string;
   italicWord?: string;
-  subtitle?: string;
+  subtitle?: ReactNode;
 }) {
   const words = title.split(" ");
 
