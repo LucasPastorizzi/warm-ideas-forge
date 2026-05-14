@@ -50,6 +50,16 @@ function Index() {
   const [sobreInView, setSobreInView] = useState(false);
   const sobreRef = useRef<HTMLDivElement>(null);
 
+  const heroImages = [heroImg, img1, img2, img3];
+  const [currentHeroImg, setCurrentHeroImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroImg((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -127,10 +137,17 @@ function Index() {
           {/* IMAGEM */}
           <div className="md:col-span-5 mt-8 md:mt-0">
             <div className="group relative aspect-[3/4] overflow-hidden rounded-2xl sm:rounded-3xl bg-secondary shadow-[var(--shadow-card)]">
-              <img
-                src={heroImg}
-                className="img-hover h-full w-full object-cover scale-105 group-hover:scale-110 transition duration-700"
-              />
+              {heroImages.map((img, i) => (
+                <img
+                  key={i}
+                  src={img}
+                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${
+                    i === currentHeroImg
+                      ? "opacity-100 scale-105 group-hover:scale-110"
+                      : "opacity-0 scale-100"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
