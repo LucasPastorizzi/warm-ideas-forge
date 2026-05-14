@@ -89,7 +89,7 @@ function Sobre() {
       {/* HERO */}
       <PageHero
         title="13 anos de mercado mais de mil histórias feitas na pele."
-        subtitle={<>Fabiano <strong>"Mineiro"</strong> Oliveira é tatuador profissional em Ivoti, RS. Especializado em realismo, reconhecido no Vale dos Sinos e presente nos maiores eventos de tattoo do Brasil.</>}
+        subtitle={<>Fabiano <strong>"Mineiro"</strong> Oliveira é tatuador profissional e tem seu próprio estúdio em Ivoti, no Rio Grande do Sul. Mineiro começou no ramo em 2012 e já tatuou mais de 1200 clientes de todo o mundo, sendo reconhecido no Vale dos Sinos e nos maiores eventos de tattoo do Brasil.</>}
       />
 
       {/* SOBRE */}
@@ -191,15 +191,6 @@ function Sobre() {
               </li>
             ))}
           </ol>
-
-          <div className="reveal mt-20">
-            <Link
-              to="/agendamento"
-              className="inline-flex items-center gap-3 rounded-full bg-foreground px-6 py-3 text-background transition-all duration-300 hover:scale-105"
-            >
-              Agendar uma conversa →
-            </Link>
-          </div>
         </div>
       </section>
 
