@@ -88,7 +88,7 @@ function Sobre() {
 
       {/* HERO */}
       <PageHero
-        eyebrow="Sobre o estúdio"
+        eyebrow=""
         title="Tatuagem é memória — e nós tratamos como tal."
         italicWord="memória"
         subtitle="Há mais de uma década, o Inkara dedica-se ao traço autoral, à pesquisa estética e à construção de peças que duram para além da pele."
