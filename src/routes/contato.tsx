@@ -11,21 +11,56 @@ function Contato() {
     <>
       <PageHero
         eyebrow="Contato"
-        title="Venha nos encontrar."
-        italicWord="encontrar"
-        subtitle="Estamos em Ivoti, RS. Atendimento presencial com horário agendado. Mande mensagem pelo Instagram ou pelo formulário."
+        title="Canais de Contato"
+        centered
       />
       <section className="px-6 pb-32">
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-3">
           {[
-            { h: "Endereço", l: ["R. Cel. Gaelzer Neto, 40", "Centro · Ivoti, RS", "CEP 93.900-000"] },
-            { h: "Horário", l: ["Segunda a Sábado", "9h às 19h", "Somente com agendamento"] },
-            { h: "Canais", l: ["@mineiro_tattoo", "Instagram / WhatsApp", "Ivoti · Vale dos Sinos, RS"] },
+            {
+              h: "Endereço",
+              l: [
+                { text: "R. Cel. Gaelzer Neto, 40", href: "https://maps.google.com/?q=R.+Cel.+Gaelzer+Neto,+40+-+Centro,+Ivoti+-+RS" },
+                { text: "Centro · Ivoti, RS" },
+                { text: "CEP 93900-000" },
+              ],
+            },
+            {
+              h: "Horário",
+              l: [
+                { text: "Segunda a Sábado" },
+                { text: "9h às 19h" },
+                { text: "Somente com agendamento" },
+              ],
+            },
+            {
+              h: "Canais",
+              l: [
+                { text: "@mineiro_tattoo", href: "https://instagram.com/mineiro_tattoo" },
+                { text: "Instagram", href: "https://instagram.com/mineiro_tattoo" },
+                { text: "WhatsApp", href: "/agendamento" },
+              ],
+            },
           ].map((c) => (
             <div key={c.h} className="reveal rounded-3xl border border-border bg-card p-8">
               <Eyebrow>{c.h}</Eyebrow>
               <ul className="mt-6 space-y-1.5 text-lg">
-                {c.l.map((line) => <li key={line}>{line}</li>)}
+                {c.l.map((line, i) => (
+                  <li key={i}>
+                    {line.href ? (
+                      <a
+                        href={line.href}
+                        target={line.href.startsWith("http") ? "_blank" : undefined}
+                        rel={line.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="hover:text-foreground transition-colors underline decoration-border underline-offset-4 hover:decoration-foreground"
+                      >
+                        {line.text}
+                      </a>
+                    ) : (
+                      line.text
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}

@@ -32,9 +32,7 @@ Ideia / referência:`
   return (
     <>
       <PageHero
-        title="Vamos conversar sobre o seu projeto."
-        italicWord="projeto"
-        subtitle="Clique no botão abaixo e fale diretamente com o Mineiro no WhatsApp. Resposta em até 48h úteis."
+        title="Vamos transformar sua ideia em arte!"
       />
 
       <section className="px-6 pb-32">

@@ -7,7 +7,7 @@ import workOriental from "@/assets/work-oriental.jpg";
 
 export const Route = createFileRoute("/trabalhos")({
   component: Trabalhos,
-  head: () => ({ meta: [{ title: "Mineiro Tattoo - Studio" }, { name: "description", content: "Galeria de tatuagens autorais realizadas pelo Mineiro Tatto, um pouco sobre mim e meu trabalho." }] }),
+  head: () => ({ meta: [{ title: "Trabalhos — Inkara Studio" }, { name: "description", content: "Galeria de tatuagens autorais realizadas pelo estúdio Inkara." }] }),
 });
 
 // Cada item representa um slot na grade orgânica.
@@ -24,31 +24,31 @@ const slots: {
   rot: number;
   z: number;
 }[] = [
-  // Linha 1
-  { img: workRealismo,   t: "Retrato — D'Alessandro", style: "Retrato",    year: "2024", col: "1 / span 5",  row: "1 / span 6",  rot: -1.8, z: 2 },
-  { img: workFineline,   t: "Guepardo",               style: "Realismo",   year: "2025", col: "5 / span 4",  row: "1 / span 4",  rot:  1.2, z: 3 },
-  { img: workOriental,   t: "Manga Preto e Cinza",    style: "Fechamento", year: "2024", col: "9 / span 4",  row: "1 / span 5",  rot: -0.8, z: 2 },
-  { img: workBlackwork,  t: "Leão Realista",          style: "Realismo",   year: "2024", col: "13 / span 4", row: "1 / span 6",  rot:  2.1, z: 3 },
+    // Linha 1
+    { img: workRealismo, t: "Retrato — D'Alessandro", style: "Retrato", year: "2024", col: "1 / span 5", row: "1 / span 6", rot: -1.8, z: 2 },
+    { img: workFineline, t: "Guepardo", style: "Realismo", year: "2025", col: "5 / span 4", row: "1 / span 4", rot: 1.2, z: 3 },
+    { img: workOriental, t: "Manga Preto e Cinza", style: "Fechamento", year: "2024", col: "9 / span 4", row: "1 / span 5", rot: -0.8, z: 2 },
+    { img: workBlackwork, t: "Leão Realista", style: "Realismo", year: "2024", col: "13 / span 4", row: "1 / span 6", rot: 2.1, z: 3 },
 
-  // Linha 2
-  { img: workFineline,   t: "Lobo Cinza",          style: "Realismo",   year: "2023", col: "2 / span 4",  row: "7 / span 4",  rot:  2.4, z: 4 },
-  { img: workBlackwork,  t: "Retrato Masculino",   style: "Retrato",    year: "2023", col: "6 / span 5",  row: "5 / span 5",  rot: -1.5, z: 3 },
-  { img: workOriental,   t: "Manga Completa",      style: "Fechamento", year: "2024", col: "11 / span 3", row: "6 / span 4",  rot:  0.9, z: 2 },
-  { img: workRealismo,   t: "Pantera",             style: "Realismo",   year: "2022", col: "14 / span 3", row: "7 / span 5",  rot: -2.0, z: 3 },
+    // Linha 2
+    { img: workFineline, t: "Lobo Cinza", style: "Realismo", year: "2023", col: "2 / span 4", row: "7 / span 4", rot: 2.4, z: 4 },
+    { img: workBlackwork, t: "Retrato Masculino", style: "Retrato", year: "2023", col: "6 / span 5", row: "5 / span 5", rot: -1.5, z: 3 },
+    { img: workOriental, t: "Manga Completa", style: "Fechamento", year: "2024", col: "11 / span 3", row: "6 / span 4", rot: 0.9, z: 2 },
+    { img: workRealismo, t: "Pantera", style: "Realismo", year: "2022", col: "14 / span 3", row: "7 / span 5", rot: -2.0, z: 3 },
 
-  // Linha 3
-  { img: workBlackwork,  t: "Preto e Sombra",      style: "Realismo",   year: "2025", col: "1 / span 4",  row: "11 / span 5", rot:  1.6, z: 2 },
-  { img: workRealismo,   t: "Retrato Feminino",    style: "Retrato",    year: "2024", col: "5 / span 6",  row: "10 / span 6", rot: -1.0, z: 3 },
-  { img: workFineline,   t: "Textura Animal",      style: "Realismo",   year: "2025", col: "11 / span 3", row: "10 / span 4", rot:  2.8, z: 4 },
-  { img: workOriental,   t: "Fechamento Perna",    style: "Fechamento", year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
-];
+    // Linha 3
+    { img: workBlackwork, t: "Preto e Sombra", style: "Realismo", year: "2025", col: "1 / span 4", row: "11 / span 5", rot: 1.6, z: 2 },
+    { img: workRealismo, t: "Retrato Feminino", style: "Retrato", year: "2024", col: "5 / span 6", row: "10 / span 6", rot: -1.0, z: 3 },
+    { img: workFineline, t: "Textura Animal", style: "Realismo", year: "2025", col: "11 / span 3", row: "10 / span 4", rot: 2.8, z: 4 },
+    { img: workOriental, t: "Fechamento Perna", style: "Fechamento", year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
+  ];
 
 function Trabalhos() {
   return (
     <>
       <PageHero
-        title="O trabalho fala por si mesmo."
-        subtitle="Mais de 1.200 sessões realizadas desde 2012. Retratos, animais, fechamentos e puras obras de realismo — cada peça, uma história real."
+        title="Portifólio"
+        subtitle="Mais de 1.200 sessões realizadas desde 2012 com traços para todos os gostos."
       />
 
       {/* GALERIA ORGÂNICA — margens mínimas para fotos quase tocarem as bordas */}
@@ -132,7 +132,6 @@ function Trabalhos() {
             opacity: 0.35,
           }}
         >
-          {slots.length} obras · Inkara Studio
         </p>
       </section>
     </>

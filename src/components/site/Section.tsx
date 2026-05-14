@@ -14,21 +14,23 @@ export function PageHero({
   title,
   italicWord,
   subtitle,
+  centered,
 }: {
   eyebrow?: string;
   title: string;
   italicWord?: string;
   subtitle?: ReactNode;
+  centered?: boolean;
 }) {
   const words = title.split(" ");
 
   return (
     <section className="relative px-6 pb-16 pt-40">
-      <div className="mx-auto max-w-6xl">
+      <div className={`mx-auto max-w-6xl${centered ? " text-center" : ""}`}>
         {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
 
         {/* HERO ANIMADO */}
-        <h1 className="mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-[8rem] flex flex-wrap gap-x-3">
+        <h1 className={`mt-6 font-display text-5xl leading-[1.05] tracking-tight md:text-[8rem] flex flex-wrap gap-x-4 md:gap-x-8${centered ? " justify-center" : ""}`}>
           {words.map((word, i) => {
             const cleanWord = word.replace(/[.,—]/g, "");
             const isItalic = italicWord && cleanWord === italicWord;
@@ -50,7 +52,7 @@ export function PageHero({
         {/* SUBTITLE */}
         {subtitle && (
           <p
-            className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl hero-sub"
+            className="mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl hero-sub"
             style={{ animationDelay: `${words.length * 0.08 + 0.2}s` }}
           >
             {subtitle}
