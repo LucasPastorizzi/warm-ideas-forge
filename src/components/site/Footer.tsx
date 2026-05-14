@@ -104,9 +104,14 @@ export function Footer() {
             © {new Date().getFullYear()} Mineiro Tattoo. Todos os direitos reservados.
           </p>
 
-          <p className="text-center font-mono uppercase tracking-[0.3em]">
+          <a
+            href="https://www.instagram.com/flypienterprise"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-center font-mono uppercase tracking-[0.3em] hover:opacity-70 transition-opacity flex items-center gap-2 justify-center"
+          >
             Por Flypi <img src={flypiLogo} alt="Flypi" style={{ width: "clamp(1rem, 2vw, 4rem)", display: "inline", verticalAlign: "middle" }} />
-          </p>
+          </a>
         </div>
       </div>
 
