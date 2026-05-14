@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState, useRef } from "react";
 
-import heroImg from "@/assets/hero-artist.jpg";
+import heroImg from "@/assets/iloveimg-converted/saveee.jpg";
 import studioImg from "@/assets/studio.jpg";
 import workBlackwork from "@/assets/work-blackwork.jpg";
 import workFineline from "@/assets/work-fineline.jpg";
