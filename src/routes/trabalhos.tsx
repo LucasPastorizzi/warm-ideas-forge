@@ -7,7 +7,7 @@ import workOriental from "@/assets/work-oriental.jpg";
 
 export const Route = createFileRoute("/trabalhos")({
   component: Trabalhos,
-  head: () => ({ meta: [{ title: "Trabalhos — Inkara Studio" }, { name: "description", content: "Galeria de tatuagens autorais realizadas pelo estúdio Inkara." }] }),
+  head: () => ({ meta: [{ title: "Mineiro Tattoo - Studio" }, { name: "description", content: "Galeria de tatuagens autorais realizadas pelo Mineiro Tatto, um pouco sobre mim e meu trabalho." }] }),
 });
 
 // Cada item representa um slot na grade orgânica.

@@ -55,7 +55,6 @@ export function Nav() {
             backdrop-blur-2xl
             transition-all
             duration-500
-
             ${
               scrolled
                 ? `
@@ -72,32 +71,26 @@ export function Nav() {
         >
           {/* linhas decorativas */}
           <div className="absolute left-8 top-0 h-px w-20 bg-gradient-to-r from-transparent via-black/30 to-transparent" />
-
           <div className="absolute bottom-0 right-8 h-px w-20 bg-gradient-to-r from-transparent via-black/20 to-transparent" />
 
           {/* LOGO */}
-          <Link
-            to="/"
-            className="group flex items-center gap-3"
-          >
+          <Link to="/" className="group flex items-center gap-3">
             <span className="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-black/10">
               <span
                 className="absolute inset-0 opacity-90"
-              style={{
-  background: "linear-gradient(135deg, #000000, #2a2a2a, #000000)",
-}}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #000000, #2a2a2a, #000000)",
+                }}
               />
-
               <span className="absolute inset-[1.5px] rounded-full bg-background" />
-                
               <span className="relative font-display text-lg text-foreground">
                 M
               </span>
             </span>
-                
+
             <span className="relative font-display text-lg tracking-tight text-foreground md:text-xl">
-              
-                Mineiro Tattoo
+              Mineiro Tattoo
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-black transition-all duration-500 group-hover:w-full" />
             </span>
           </Link>
@@ -105,10 +98,7 @@ export function Nav() {
           {/* DESKTOP */}
           <ul className="hidden items-center gap-1 md:flex">
             {links.map((l, index) => (
-              <li
-                key={l.to}
-                className="flex items-center"
-              >
+              <li key={l.to} className="flex items-center">
                 <Link
                   to={l.to}
                   className="
@@ -182,10 +172,7 @@ export function Nav() {
               md:inline-flex
             "
           >
-            <span className="relative z-10">
-              Agendar
-            </span>
-
+            <span className="relative z-10">Agendar</span>
             <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
@@ -216,7 +203,7 @@ export function Nav() {
         </nav>
       </header>
 
-      {/* MOBILE MENU */}
+      {/* MOBILE MENU (MELHORADO) */}
       <div
         className={`
           fixed
@@ -225,68 +212,66 @@ export function Nav() {
           md:hidden
           transition-all
           duration-500
-
           ${
-            mobileOpen
-              ? "visible opacity-100"
-              : "invisible opacity-0"
+            mobileOpen ? "visible opacity-100" : "invisible opacity-0"
           }
         `}
       >
-        {/* backdrop */}
+        {/* BACKDROP */}
         <div
           onClick={() => setMobileOpen(false)}
           className="
             absolute
             inset-0
-            bg-black/40
+            bg-black/50
             backdrop-blur-md
           "
         />
 
-        {/* painel */}
+        {/* PAINEL */}
         <div
           className={`
             absolute
             inset-x-3
-            top-24
+            top-20
             overflow-hidden
-            rounded-[2rem]
+            rounded-[2.2rem]
             border
-            border-black/10
-            bg-background/95
-            shadow-[0_30px_80px_rgba(0,0,0,0.18)]
+            border-white/10
+            bg-gradient-to-b from-background/95 to-background/80
+            shadow-[0_35px_100px_rgba(0,0,0,0.25)]
             backdrop-blur-3xl
             transition-all
             duration-500
 
             ${
               mobileOpen
-                ? "translate-y-0 opacity-100"
-                : "-translate-y-6 opacity-0"
+                ? "translate-y-0 scale-100 opacity-100"
+                : "-translate-y-8 scale-[0.98] opacity-0"
             }
           `}
         >
-          {/* topo */}
-          <div className="relative border-b border-black/5 px-5 py-5">
+          {/* HEADER */}
+          <div className="relative px-6 py-6 border-b border-white/5">
             <div className="flex items-center justify-between">
               <div>
                 <p className="font-display text-xl text-foreground">
                   Navegação
                 </p>
-
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Explore o universo Inkara
+                <p className="text-sm text-muted-foreground mt-1">
+                  Explore o universo Mineiro Tattoo
                 </p>
               </div>
 
-              <div className="h-px w-16 bg-gradient-to-r from-black/20 to-transparent" />
+              <div className="h-10 w-10 rounded-full bg-black/5 flex items-center justify-center">
+                <div className="h-2 w-2 rounded-full bg-black/40 animate-pulse" />
+              </div>
             </div>
           </div>
 
-          {/* links */}
-          <div className="p-3">
-            <ul className="flex flex-col gap-2">
+          {/* LINKS */}
+          <div className="p-4">
+            <ul className="flex flex-col gap-3">
               {links.map((l, index) => (
                 <li key={l.to}>
                   <Link
@@ -298,44 +283,65 @@ export function Nav() {
                       flex
                       items-center
                       justify-between
-                      overflow-hidden
                       rounded-2xl
                       border
-                      border-transparent
+                      border-black/5
                       bg-black/[0.02]
                       px-4
                       py-4
                       transition-all
                       duration-300
+                      hover:scale-[1.01]
                       hover:border-black/10
-                      hover:bg-black/[0.04]
+                      hover:bg-black/[0.05]
                     "
                   >
-                    {/* glow */}
-                    <div className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <div className="absolute inset-y-0 left-0 w-1 bg-black rounded-full" />
-                    </div>
+                    {/* barra lateral */}
+                    <span
+                      className="
+                        absolute
+                        left-0
+                        top-0
+                        h-full
+                        w-1
+                        scale-y-0
+                        bg-black
+                        transition-transform
+                        duration-300
+                        group-hover:scale-y-100
+                        rounded-full
+                      "
+                    />
 
                     <div className="flex items-center gap-4">
-                      {/* número */}
-                      <span className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 bg-background text-xs font-medium text-muted-foreground">
-                        0{index + 1}
+                      <span className="
+                        flex
+                        h-10
+                        w-10
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-background
+                        border
+                        border-black/10
+                        text-xs
+                        font-semibold
+                        text-muted-foreground
+                      ">
+                        {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      {/* texto */}
                       <div>
                         <p className="text-sm font-medium text-foreground">
                           {l.label}
                         </p>
-
                         <p className="text-xs text-muted-foreground">
-                          Navegar para seção
+                          Acessar seção
                         </p>
                       </div>
                     </div>
 
-                    {/* seta */}
-                    <span className="translate-x-0 text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-foreground">
+                    <span className="text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:text-foreground">
                       →
                     </span>
                   </Link>
@@ -350,7 +356,7 @@ export function Nav() {
               className="
                 group
                 relative
-                mt-4
+                mt-5
                 flex
                 items-center
                 justify-center
@@ -363,14 +369,14 @@ export function Nav() {
                 text-sm
                 font-semibold
                 text-white
+                shadow-lg
+                shadow-black/20
                 transition-all
                 duration-300
                 hover:scale-[1.02]
               "
             >
-              <span className="relative z-10">
-                Agendar Sessão
-              </span>
+              <span className="relative z-10">Agendar Sessão</span>
 
               <span className="relative z-10 transition-transform duration-300 group-hover:translate-x-1">
                 →
@@ -380,7 +386,7 @@ export function Nav() {
                 className="
                   absolute
                   inset-0
-                  translate-x-[-120%]
+                  -translate-x-[120%]
                   bg-gradient-to-r
                   from-transparent
                   via-white/20
