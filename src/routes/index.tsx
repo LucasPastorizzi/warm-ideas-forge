@@ -31,10 +31,7 @@ const testimonials = [
 function Index() {
   const [scrollY, setScrollY] = useState(0);
   const [sobreInView, setSobreInView] = useState(false);
-  const [carouselRotation, setCarouselRotation] = useState(0);
-  const [carouselInView, setCarouselInView] = useState(false);
   const sobreRef = useRef<HTMLDivElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -63,31 +60,7 @@ function Index() {
     return () => observer.disconnect();
   }, []);
 
-  // Carrosel 3D com rotação automática
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setCarouselInView(entry.isIntersecting);
-      },
-      { threshold: 0.3 }
-    );
 
-    if (carouselRef.current) {
-      observer.observe(carouselRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (!carouselInView) return;
-
-    const interval = setInterval(() => {
-      setCarouselRotation((prev) => (prev + 90) % 360);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, [carouselInView]);
 
   // 👇 efeito baseado no scroll
   const translate = scrollY * 0.3; // movimento suave
@@ -150,136 +123,223 @@ function Index() {
 
       {/* SOBRE */}
       <section ref={sobreRef} className="px-4 sm:px-6 py-16 sm:py-32 overflow-hidden" style={{ perspective: "1200px" }}>
-  <div className="mx-auto grid max-w-7xl gap-8 sm:gap-16 grid-cols-1 md:grid-cols-12 md:items-center">
+        <div className="mx-auto grid max-w-7xl gap-8 sm:gap-16 grid-cols-1 md:grid-cols-12 md:items-center">
 
-    {/* IMAGEM */}
-    <div 
-      className="md:col-span-6 order-2 md:order-1"
-      style={{
-        transform: sobreInView ? "rotateY(0) rotateX(0) scale(1)" : "rotateY(-35deg) rotateX(10deg) scale(0.9)",
-        opacity: sobreInView ? 1 : 0.6,
-        transition: "all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)",
-        transformStyle: "preserve-3d" as any,
-      }}
-    >
-      <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl">
-        <img
-          src={studioImg}
-          className="sobre-img h-full w-full object-cover"
-        />
+          {/* IMAGEM */}
+          <div
+            className="md:col-span-6 order-2 md:order-1"
+            style={{
+              transform: sobreInView ? "rotateY(0) rotateX(0) scale(1)" : "rotateY(-35deg) rotateX(10deg) scale(0.9)",
+              opacity: sobreInView ? 1 : 0.6,
+              transition: "all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1)",
+              transformStyle: "preserve-3d" as any,
+            }}
+          >
+            <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl">
+              <img
+                src={studioImg}
+                className="sobre-img h-full w-full object-cover"
+              />
 
-        {/* overlay sutil */}
-        <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 transition duration-700 group-hover:opacity-100" />
-      </div>
-    </div>
+              {/* overlay sutil */}
+              <div className="pointer-events-none absolute inset-0 bg-black/10 opacity-0 transition duration-700 group-hover:opacity-100" />
+            </div>
+          </div>
 
-    {/* TEXTO */}
-    <div 
-      className="md:col-span-6 order-1 md:order-2"
-      style={{
-        transform: sobreInView ? "translateX(0) rotateZ(0)" : "translateX(60px) rotateZ(-5deg)",
-        opacity: sobreInView ? 1 : 0,
-        transition: "all 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s",
-      }}
-    >
-      <h2 className="sobre-text mt-0 md:mt-6 font-display text-3xl sm:text-5xl md:text-7xl leading-[0.95]">
-        Mais de 12 anos dedicados à <em className="italic">arte da pele</em>.
-      </h2>
+          {/* TEXTO */}
+          <div
+            className="md:col-span-6 order-1 md:order-2"
+            style={{
+              transform: sobreInView ? "translateX(0) rotateZ(0)" : "translateX(60px) rotateZ(-5deg)",
+              opacity: sobreInView ? 1 : 0,
+              transition: "all 1s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s",
+            }}
+          >
+            <h2 className="sobre-text mt-0 md:mt-6 font-display text-3xl sm:text-5xl md:text-7xl leading-[0.95]">
+              Mais de 12 anos dedicados à <em className="italic">arte da pele</em>.
+            </h2>
 
-      <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground">
-        Apaixonado pelo traço autoral, criando experiências únicas.
-      </p>
-    </div>
+            <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground">
+              Apaixonado pelo traço autoral, criando experiências únicas.
+            </p>
+          </div>
 
-  </div>
-</section>
+        </div>
+      </section>
 
-      {/* ESTILOS - CARROSEL 3D */}
-      <section ref={carouselRef} className="px-4 sm:px-6 py-16 sm:py-32" style={{ perspective: "1000px" }}>
+      {/* PORTFÓLIO — AMONTOADO DE FOTOS */}
+      <section className="px-4 sm:px-6 py-16 sm:py-32 overflow-hidden">
         <div className="mx-auto max-w-7xl">
 
-          <h2 className="reveal mt-0 sm:mt-6 font-display text-3xl sm:text-5xl md:text-7xl">
-            Seu desejo, minha <em className="italic">arte</em>.
+          <Eyebrow>Portfólio</Eyebrow>
+
+          <h2 className="mt-4 font-display text-3xl sm:text-5xl md:text-6xl leading-[0.95] max-w-xl">
+            Projetos que ficam <em className="italic">para sempre</em>.
           </h2>
 
-          {/* CARROSEL 3D CILÍNDRICO */}
-          <div className="mt-12 sm:mt-20 flex justify-center items-center h-80 sm:h-96 perspective-1000 w-full">
+          {/* GRADE ORGÂNICA */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(12, 1fr)",
+              gridAutoRows: "80px",
+              gap: "12px",
+              marginTop: "56px",
+              position: "relative",
+            }}
+          >
+            {/* Foto grande — topo esquerda */}
             <div
               style={{
-                perspective: "1000px",
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
+                gridColumn: "1 / span 5",
+                gridRow: "1 / span 5",
+                transform: "rotate(-2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px 4px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+                background: "#1a1a1a",
               }}
             >
-              <div
-                style={{
-                  position: "relative",
-                  width: "clamp(200px, 90vw, 280px)",
-                  height: "clamp(260px, 110vw, 360px)",
-                  transformStyle: "preserve-3d",
-                  transform: `rotateY(${carouselRotation}deg)`,
-                  transition: "transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)",
-                }}
-              >
-                {styles.map((s, i) => {
-                  const angle = (i / styles.length) * 360;
-                  const radius = 150;
-                  return (
-                    <div
-                      key={s.name}
-                      style={{
-                        position: "absolute",
-                        width: "clamp(200px, 90vw, 280px)",
-                        height: "clamp(260px, 110vw, 360px)",
-                        left: "50%",
-                        top: "50%",
-                        marginLeft: "calc(-50%)",
-                        marginTop: "calc(-50%)",
-                        transformStyle: "preserve-3d",
-                        transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
-                        backfaceVisibility: "hidden",
-                      }}
-                    >
-                      <div className="group relative w-full h-full overflow-hidden rounded-xl sm:rounded-2xl shadow-2xl">
-                        <img
-                          src={s.img}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                        
-                        {/* Overlay com info */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition duration-500 flex flex-col justify-end p-4 sm:p-6">
-                          <h3 className="text-lg sm:text-2xl font-bold text-white">{s.name}</h3>
-                          <p className="text-xs sm:text-sm text-white/80 mt-1 sm:mt-2 line-clamp-2">{s.desc}</p>
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div style={{ width: "100%", height: "100%", background: "#222", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 1</span>
+              </div>
+            </div>
+
+            {/* Foto média — topo centro */}
+            <div
+              style={{
+                gridColumn: "5 / span 4",
+                gridRow: "1 / span 4",
+                transform: "rotate(1.5deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px 4px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#2a2a2a", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 2</span>
+              </div>
+            </div>
+
+            {/* Foto alta — direita topo */}
+            <div
+              style={{
+                gridColumn: "9 / span 4",
+                gridRow: "1 / span 6",
+                transform: "rotate(-1deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 3px 3px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#1f1f1f", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 3</span>
+              </div>
+            </div>
+
+            {/* Foto quadrada — meio esquerda */}
+            <div
+              style={{
+                gridColumn: "1 / span 4",
+                gridRow: "6 / span 4",
+                transform: "rotate(2.5deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px -2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 4,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#252525", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 4</span>
+              </div>
+            </div>
+
+            {/* Foto paisagem — meio centro */}
+            <div
+              style={{
+                gridColumn: "5 / span 5",
+                gridRow: "5 / span 3",
+                transform: "rotate(-1.8deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -2px -2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#202020", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 5</span>
+              </div>
+            </div>
+
+            {/* Foto quadrada — baixo direita */}
+            <div
+              style={{
+                gridColumn: "9 / span 4",
+                gridRow: "7 / span 4",
+                transform: "rotate(1.2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px -3px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#272727", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 6</span>
+              </div>
+            </div>
+
+            {/* Foto larga — fundo esquerda */}
+            <div
+              style={{
+                gridColumn: "2 / span 6",
+                gridRow: "10 / span 4",
+                transform: "rotate(-0.8deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 2px 2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#212121", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 7</span>
+              </div>
+            </div>
+
+            {/* Foto alta — fundo direita */}
+            <div
+              style={{
+                gridColumn: "8 / span 5",
+                gridRow: "11 / span 3",
+                transform: "rotate(2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -4px 2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+                background: "#1a1a1a",
+              }}
+            >
+              <div style={{ width: "100%", height: "100%", background: "#242424", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <span style={{ color: "#555", fontSize: "12px", fontFamily: "monospace" }}>foto 8</span>
               </div>
             </div>
           </div>
 
-          {/* INDICADORES */}
-          <div className="mt-8 sm:mt-12 flex justify-center items-center gap-2 sm:gap-3">
-            {styles.map((s, i) => (
-              <button
-                key={s.name}
-                onClick={() => setCarouselRotation((i / styles.length) * 360)}
-                className={`h-2 rounded-full transition-all duration-500 ${
-                  Math.round(carouselRotation) % 360 === Math.round((i / styles.length) * 360) % 360
-                    ? "bg-foreground w-6 sm:w-8"
-                    : "w-2 sm:w-2.5 bg-border hover:bg-muted-foreground"
-                }`}
-              />
-            ))}
-          </div>
-
-          {/* INFO EXTRA */}
-          <div className="mt-8 sm:mt-16 text-center px-2">
-            <p className="text-muted-foreground text-xs sm:text-sm">🔄 Rotaciona automaticamente • Toque/Clique nos indicadores</p>
+          <div className="mt-10 sm:mt-14 text-center">
+            <Link
+              to="/trabalhos"
+              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium hover:bg-secondary hover:scale-105 transition"
+            >
+              Ver todos os trabalhos →
+            </Link>
           </div>
         </div>
       </section>
