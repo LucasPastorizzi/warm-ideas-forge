@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { PenTool } from "lucide-react";
 import { useEffect } from "react";
+import flypiLogo from "@/assets/Flypi Logo.png";
 
 export function Footer() {
   useEffect(() => {
@@ -104,7 +105,7 @@ export function Footer() {
           </p>
 
           <p className="text-center font-mono uppercase tracking-[0.3em]">
-            Por Flypi <img src="" alt="" />
+            Por Flypi <img src={flypiLogo} alt="Flypi" style={{ width: "clamp(1rem, 2vw, 4rem)", display: "inline", verticalAlign: "middle" }} />
           </p>
         </div>
       </div>
