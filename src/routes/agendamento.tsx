@@ -41,19 +41,19 @@ Ideia / referência:`
           <aside className="md:col-span-5 space-y-8">
             <div className="space-y-4">
               <h2 className="text-2xl font-display tracking-tight">
-                Atendimento direto no WhatsApp
+                Como funciona o processo
               </h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Para agilizar o atendimento e garantir um retorno mais rápido,
-                todo o processo de orçamento é feito diretamente pelo WhatsApp.
+                Mande sua ideia, tamanho e local do corpo pelo WhatsApp.
+                Com essas informações consigo te passar um retorno sobre prazo e valor.
               </p>
             </div>
 
             <div className="space-y-3 text-sm">
-              <p>• Resposta em até 48h úteis</p>
-              <p>• Orçamento personalizado</p>
-              <p>• Vagas limitadas por semana</p>
-              <p>• Atendimento em Ivoti / RS</p>
+              <p>• Resposta em até 48h — sem enrolação</p>
+              <p>• Cada peça pensada do zero pra você</p>
+              <p>• Agenda com vagas controladas por semana</p>
+              <p>• Estúdio em Ivoti, RS</p>
             </div>
           </aside>
 
@@ -61,12 +61,12 @@ Ideia / referência:`
           <div className="md:col-span-7">
             <div className="rounded-3xl border border-border bg-card p-10 shadow-[var(--shadow-soft)] text-center space-y-6">
               <h3 className="text-3xl font-display tracking-tight">
-                Iniciar conversa no WhatsApp
+                Manda sua ideia
               </h3>
 
               <p className="text-sm text-muted-foreground">
-                Clique abaixo e já envie os detalhes da sua ideia.
-                O briefing já vem pronto pra facilitar.
+                Sem formulário, sem burocracia. É só mandar uma mensagem
+                com sua referência — a gente resolve direto no zap.
               </p>
 
               <a
@@ -75,12 +75,12 @@ Ideia / referência:`
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 rounded-full bg-green-500 px-8 py-4 text-sm font-medium text-white transition hover:bg-green-600"
               >
-                Falar no WhatsApp
+                Abrir WhatsApp
                 <span aria-hidden>→</span>
               </a>
 
               <p className="text-xs text-muted-foreground">
-                Você será redirecionado para o WhatsApp automaticamente.
+                Você vai direto pro WhatsApp do Mineiro.
               </p>
             </div>
           </div>
