@@ -2,10 +2,16 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/Section";
 import { useEffect } from "react";
 
-import workBlackwork from "@/assets/work-blackwork.jpg";
-import workFineline from "@/assets/work-fineline.jpg";
-import workRealismo from "@/assets/work-realismo.jpg";
-import workOriental from "@/assets/work-oriental.jpg";
+
+
+
+import realismo from "@/assets/iloveimg-converted/IMG_0466.jpg";
+import pretoecina from "@/assets/iloveimg-converted/IMG_8118.jpg";
+import retratoss from "@/assets/iloveimg-converted/IMG_0384.jpg";
+
+
+import fechamentoss from "@/assets/iloveimg-converted/IMG_8009.jpg";
+
 
 export const Route = createFileRoute("/estilos")({
   component: Estilos,
@@ -25,25 +31,25 @@ const styles = [
   {
     n: "01",
     name: "Realismo",
-    img: workRealismo,
+    img: realismo,
     desc: "A especialidade principal do Mineiro. Profundidade fotográfica, textura real e contraste impossível de ignorar. Cada peça parece saltar da pele.",
   },
   {
     n: "02",
     name: "Preto e Cinza",
-    img: workBlackwork,
+    img: pretoecina,
     desc: "Domínio total de sombras, meio-tons e acabamento duradouro. A base de toda grande tattoo de realismo executada com precisão cirúrgica.",
   },
   {
     n: "03",
     name: "Retratos",
-    img: workFineline,
+    img: retratoss,
     desc: "Pessoas, ídolos, animais — eternizados com fidelidade na pele. Referência regional nesse estilo que exige técnica e sensibilidade ao mesmo tempo.",
   },
   {
     n: "04",
     name: "Fechamentos",
-    img: workOriental,
+    img: fechamentoss,
     desc: "Mangas de braço, fechamentos de perna e composições grandes, planejadas para fluir com o corpo e manter impacto por décadas.",
   },
 ];
