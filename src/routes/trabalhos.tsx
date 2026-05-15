@@ -4,6 +4,25 @@ import workBlackwork from "@/assets/work-blackwork.jpg";
 import workFineline from "@/assets/work-fineline.jpg";
 import workRealismo from "@/assets/work-realismo.jpg";
 import workOriental from "@/assets/work-oriental.jpg";
+import imgg1 from "@/assets/iloveimg-converted/IMG_6284.jpg";
+import imgg2 from "@/assets/iloveimg-converted/IMG_5106.jpg";
+import imgg3 from "@/assets/iloveimg-converted/IMG_6284.jpg";
+import imgg4 from "@/assets/iloveimg-converted/IMG_8009.jpg";
+import imgg5 from "@/assets/iloveimg-converted/IMG_8118.jpg";
+import imgg6 from "@/assets/iloveimg-converted/IMG_8302.jpg";
+import imgg7 from "@/assets/iloveimg-converted/IMG_3143.jpg";
+import imgg8 from "@/assets/iloveimg-converted/IMG_3685.jpg";
+import imgg9 from "@/assets/iloveimg-converted/IMG_4802.jpg";
+import imgg10 from "@/assets/iloveimg-converted/IMG_3892.jpg";
+import imgg11 from "@/assets/iloveimg-converted/IMG_5076.jpg";
+import imgg12 from "@/assets/iloveimg-converted/IMG_3138.jpg"; 
+
+
+
+
+
+
+
 
 export const Route = createFileRoute("/trabalhos")({
   component: Trabalhos,
@@ -17,31 +36,31 @@ export const Route = createFileRoute("/trabalhos")({
 const slots: {
   img: string;
   t: string;
-  style: string;
+  
   year: string;
   col: string;
   row: string;
   rot: number;
   z: number;
 }[] = [
-    // Linha 1
-    { img: workRealismo, t: "Retrato — D'Alessandro", style: "Retrato", year: "2024", col: "1 / span 5", row: "1 / span 6", rot: -1.8, z: 2 },
-    { img: workFineline, t: "Guepardo", style: "Realismo", year: "2025", col: "5 / span 4", row: "1 / span 4", rot: 1.2, z: 3 },
-    { img: workOriental, t: "Manga Preto e Cinza", style: "Fechamento", year: "2024", col: "9 / span 4", row: "1 / span 5", rot: -0.8, z: 2 },
-    { img: workBlackwork, t: "Leão Realista", style: "Realismo", year: "2024", col: "13 / span 4", row: "1 / span 6", rot: 2.1, z: 3 },
+  // Linha 1
+  { img: imgg1, t: "Tattoo 01",  year: "2024", col: "1 / span 5", row: "1 / span 6", rot: -1.8, z: 2 },
+  { img: imgg2, t: "Tattoo 02",  year: "2025", col: "5 / span 4", row: "1 / span 4", rot: 1.2, z: 3 },
+  { img: imgg3, t: "Tattoo 03",  year: "2024", col: "9 / span 4", row: "1 / span 5", rot: -0.8, z: 2 },
+  { img: imgg4, t: "Tattoo 04",  year: "2024", col: "13 / span 4", row: "1 / span 6", rot: 2.1, z: 3 },
 
-    // Linha 2
-    { img: workFineline, t: "Lobo Cinza", style: "Realismo", year: "2023", col: "2 / span 4", row: "7 / span 4", rot: 2.4, z: 4 },
-    { img: workBlackwork, t: "Retrato Masculino", style: "Retrato", year: "2023", col: "6 / span 5", row: "5 / span 5", rot: -1.5, z: 3 },
-    { img: workOriental, t: "Manga Completa", style: "Fechamento", year: "2024", col: "11 / span 3", row: "6 / span 4", rot: 0.9, z: 2 },
-    { img: workRealismo, t: "Pantera", style: "Realismo", year: "2022", col: "14 / span 3", row: "7 / span 5", rot: -2.0, z: 3 },
+  // Linha 2
+  { img: imgg5, t: "Tattoo 05", year: "2023", col: "2 / span 4", row: "7 / span 4", rot: 2.4, z: 4 },
+  { img: imgg6, t: "Tattoo 06",  year: "2023", col: "6 / span 5", row: "5 / span 5", rot: -1.5, z: 3 },
+  { img: imgg7, t: "Tattoo 07",  year: "2024", col: "11 / span 3", row: "6 / span 4", rot: 0.9, z: 2 },
+  { img: imgg8, t: "Tattoo 08",  year: "2022", col: "14 / span 3", row: "7 / span 5", rot: -2.0, z: 3 },
 
-    // Linha 3
-    { img: workBlackwork, t: "Preto e Sombra", style: "Realismo", year: "2025", col: "1 / span 4", row: "11 / span 5", rot: 1.6, z: 2 },
-    { img: workRealismo, t: "Retrato Feminino", style: "Retrato", year: "2024", col: "5 / span 6", row: "10 / span 6", rot: -1.0, z: 3 },
-    { img: workFineline, t: "Textura Animal", style: "Realismo", year: "2025", col: "11 / span 3", row: "10 / span 4", rot: 2.8, z: 4 },
-    { img: workOriental, t: "Fechamento Perna", style: "Fechamento", year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
-  ];
+  // Linha 3
+  { img: imgg9, t: "Tattoo 09", year: "2025", col: "1 / span 4", row: "11 / span 5", rot: 1.6, z: 2 },
+  { img: imgg10, t: "Tattoo 10", year: "2024", col: "5 / span 6", row: "10 / span 6", rot: -1.0, z: 3 },
+  { img: imgg11, t: "Tattoo 11",  year: "2025", col: "11 / span 3", row: "10 / span 4", rot: 2.8, z: 4 },
+  { img: imgg12, t: "Tattoo 12",  year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
+];
 
 function Trabalhos() {
   return (
@@ -114,7 +133,7 @@ function Trabalhos() {
                   borderRadius: "999px",
                 }}
               >
-                {s.style}
+                
               </span>
             </div>
           ))}
