@@ -16,8 +16,8 @@ import img3 from "@/assets/iloveimg-converted/IMG_0684.jpg";
 import img4 from "@/assets/iloveimg-converted/IMG_1853.jpg";
 import img5 from "@/assets/iloveimg-converted/IMG_1859.jpg";
 import img6 from "@/assets/iloveimg-converted/IMG_2357.jpg";
-import img7  from "@/assets/iloveimg-converted/IMG_2271.jpg";
-import img8  from "@/assets/iloveimg-converted/IMG_2367.jpg";
+import img7 from "@/assets/iloveimg-converted/IMG_2271.jpg";
+import img8 from "@/assets/iloveimg-converted/IMG_2367.jpg";
 
 
 
@@ -141,11 +141,10 @@ function Index() {
                 <img
                   key={i}
                   src={img}
-                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${
-                    i === currentHeroImg
-                      ? "opacity-100 scale-105 group-hover:scale-110"
-                      : "opacity-0 scale-100"
-                  }`}
+                  className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${i === currentHeroImg
+                    ? "opacity-100 scale-105 group-hover:scale-110"
+                    : "opacity-0 scale-100"
+                    }`}
                 />
               ))}
             </div>
@@ -193,9 +192,8 @@ function Index() {
               Mais de 13 anos gravando histórias <em className="italic">reais</em>.
             </h2>
 
-            <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground">
-              Fabiano "Mineiro" Oliveira é referência em realismo no Vale dos Sinos.
-              Desde 2012 em Ivoti, constrói peças de alto nível técnico com foco em retratos, animais e fechamentos.
+            <p className="sobre-text mt-4 sm:mt-8 text-base sm:text-lg text-muted-foreground text-justify">
+              Fabiano “Mineiro” Oliveira é referência em realismo no Vale dos Sinos e atua profissionalmente desde 2012 em Ivoti. Reconhecido pela precisão nos detalhes, profundidade e acabamento impecável, construiu uma trajetória marcada por trabalhos autorais, retratos, animais e grandes fechamentos em preto e cinza. Ao longo dos anos, participou de convenções nacionais, tatuou atletas e personalidades conhecidas e consolidou sua marca através de um atendimento exclusivo, ambiente seguro e constante aperfeiçoamento técnico. Cada projeto é desenvolvido de forma personalizada, transformando histórias, memórias e ideias em peças únicas com identidade própria.
             </p>
           </div>
 
@@ -222,125 +220,125 @@ function Index() {
               position: "relative",
             }}
           >
-         {/* Foto grande — topo esquerda */}
-<div
-  style={{
-    gridColumn: "1 / span 5",
-    gridRow: "1 / span 5",
-    transform: "rotate(-2deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px 4px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 2,
-  }}
->
-  <img src={img1} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto grande — topo esquerda */}
+            <div
+              style={{
+                gridColumn: "1 / span 5",
+                gridRow: "1 / span 5",
+                transform: "rotate(-2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px 4px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+              }}
+            >
+              <img src={img1} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto média — topo centro */}
-<div
-  style={{
-    gridColumn: "5 / span 4",
-    gridRow: "1 / span 4",
-    transform: "rotate(1.5deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px 4px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 3,
-  }}
->
-  <img src={img2} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto média — topo centro */}
+            <div
+              style={{
+                gridColumn: "5 / span 4",
+                gridRow: "1 / span 4",
+                transform: "rotate(1.5deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px 4px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+              }}
+            >
+              <img src={img2} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto alta — direita topo */}
-<div
-  style={{
-    gridColumn: "9 / span 4",
-    gridRow: "1 / span 6",
-    transform: "rotate(-1deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 3px 3px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 2,
-  }}
->
-  <img src={img3} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto alta — direita topo */}
+            <div
+              style={{
+                gridColumn: "9 / span 4",
+                gridRow: "1 / span 6",
+                transform: "rotate(-1deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 3px 3px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+              }}
+            >
+              <img src={img3} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto quadrada — meio esquerda */}
-<div
-  style={{
-    gridColumn: "1 / span 4",
-    gridRow: "6 / span 4",
-    transform: "rotate(2.5deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px -2px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 4,
-  }}
->
-  <img src={img4} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto quadrada — meio esquerda */}
+            <div
+              style={{
+                gridColumn: "1 / span 4",
+                gridRow: "6 / span 4",
+                transform: "rotate(2.5deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 4px -2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 4,
+              }}
+            >
+              <img src={img4} style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "35% center" }} />
+            </div>
 
-{/* Foto paisagem — meio centro */}
-<div
-  style={{
-    gridColumn: "5 / span 5",
-    gridRow: "5 / span 3",
-    transform: "rotate(-1.8deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -2px -2px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 3,
-  }}
->
-  <img src={img5} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto paisagem — meio centro */}
+            <div
+              style={{
+                gridColumn: "5 / span 5",
+                gridRow: "4 / span 6",
+                transform: "rotate(-1.8deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -2px -2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+              }}
+            >
+              <img src={img5} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto quadrada — baixo direita */}
-<div
-  style={{
-    gridColumn: "9 / span 4",
-    gridRow: "7 / span 4",
-    transform: "rotate(1.2deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px -3px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 2,
-  }}
->
-  <img src={img6} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto quadrada — baixo direita */}
+            <div
+              style={{
+                gridColumn: "9 / span 4",
+                gridRow: "7 / span 4",
+                transform: "rotate(1.2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -3px -3px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+              }}
+            >
+              <img src={img6} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto larga — fundo esquerda */}
-<div
-  style={{
-    gridColumn: "2 / span 6",
-    gridRow: "10 / span 4",
-    transform: "rotate(-0.8deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), 2px 2px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 3,
-  }}
->
-  <img src={img7} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto larga — fundo esquerda */}
+            <div
+              style={{
+                gridColumn: "2 / span 6",
+                gridRow: "10 / span 4",
+                transform: "rotate(-0.8deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), 2px 2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 3,
+              }}
+            >
+              <img src={img7} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
 
-{/* Foto alta — fundo direita */}
-<div
-  style={{
-    gridColumn: "8 / span 5",
-    gridRow: "11 / span 3",
-    transform: "rotate(2deg)",
-    boxShadow: "0 8px 32px rgba(0,0,0,0.35), -4px 2px 0 rgba(0,0,0,0.12)",
-    borderRadius: "6px",
-    overflow: "hidden",
-    zIndex: 2,
-  }}
->
-  <img src={img8} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-</div>
+            {/* Foto alta — fundo direita */}
+            <div
+              style={{
+                gridColumn: "8 / span 5",
+                gridRow: "11 / span 3",
+                transform: "rotate(2deg)",
+                boxShadow: "0 8px 32px rgba(0,0,0,0.35), -4px 2px 0 rgba(0,0,0,0.12)",
+                borderRadius: "6px",
+                overflow: "hidden",
+                zIndex: 2,
+              }}
+            >
+              <img src={img8} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            </div>
           </div>
 
           <div className="mt-10 sm:mt-14 text-center">
@@ -350,28 +348,6 @@ function Index() {
             >
               Ver o portfólio completo →
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* DEPOIMENTOS */}
-      <section className="px-4 sm:px-6 py-16 sm:py-32">
-        <div className="mx-auto max-w-7xl">
-
-
-          <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-3">
-            {testimonials.map((t, i) => (
-              <figure
-                key={i}
-                className="reveal rounded-2xl sm:rounded-3xl border p-4 sm:p-8 hover:shadow-xl transition duration-500"
-              >
-                <blockquote className="text-lg sm:text-2xl">
-                  "{t.q}"
-                </blockquote>
-
-                <p className="mt-4 sm:mt-6 text-xs sm:text-sm">{t.a}</p>
-              </figure>
-            ))}
           </div>
         </div>
       </section>
