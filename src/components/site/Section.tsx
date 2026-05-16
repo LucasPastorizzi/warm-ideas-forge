@@ -52,7 +52,7 @@ export function PageHero({
         {/* SUBTITLE */}
         {subtitle && (
           <p
-            className="mt-8 max-w-3xl text-lg text-muted-foreground md:text-xl hero-sub"
+            className="mt-8 text-lg text-muted-foreground md:text-xl hero-sub text-justify"
             style={{ animationDelay: `${words.length * 0.08 + 0.2}s` }}
           >
             {subtitle}

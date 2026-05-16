@@ -89,41 +89,13 @@ function Sobre() {
       {/* HERO */}
       <PageHero
         title="13 anos de mercado mais de mil histórias feitas na pele."
-        subtitle={<>Fabiano <strong>"Mineiro"</strong> Oliveira é tatuador profissional e tem seu próprio estúdio em Ivoti, no Rio Grande do Sul. Mineiro começou no ramo em 2012 e já tatuou mais de 1200 clientes de todo o mundo, sendo reconhecido no Vale dos Sinos e nos maiores eventos de tattoo do Brasil.</>}
+        subtitle={<>Mais do que tatuagens, cada projeto desenvolvido por Mineiro carrega significado, identidade e expressão pessoal.
+          Conhecido pelo cuidado em cada detalhe, o artista combina técnica, composição e profundidade para criar peças únicas que
+          acompanham o cliente por toda a vida. Seu trabalho ganhou destaque pela originalidade dos fechamentos, retratos e artes em
+          preto e cinza, sempre mantendo um padrão elevado de acabamento e biossegurança. Hoje, o estúdio atende clientes de diferentes
+          regiões do Brasil, consolidando o nome Mineiro Tattoo como uma referência em exclusividade, qualidade e experiência dentro da
+          cena da tattoo nacional.</>}
       />
-
-      {/* SOBRE */}
-      <section className="px-5 py-20 md:px-6 md:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-12 md:gap-20 md:items-center">
-
-          {/* IMAGEM */}
-          <div className="md:col-span-7 reveal">
-            <div className="overflow-hidden rounded-3xl group">
-              <img
-                id="parallax-img"
-                src={studioImg}
-                alt="Estúdio Inkara"
-                className="h-full w-full object-cover transition duration-1000 ease-out group-hover:scale-105"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          {/* TEXTO */}
-          <div className="md:col-span-5 space-y-6 md:space-y-8 text-muted-foreground reveal">
-
-            <p className="text-base md:text-lg leading-relaxed text-foreground">
-              O Mineiro não é um tatuador de volume. É um artista que leva cada peça a sério —
-              desde a primeira conversa até o resultado final na pele.
-            </p>
-
-            <p className="text-sm md:text-base">
-              Seu estúdio em Ivoti foi construído com foco em biossegurança, conforto e uma religião:
-              esterilização completa em cada sessão. Não existe atalho quando se trata de qualidade e saúde.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* SEÇÃO PRETA FULL */}
       <section
