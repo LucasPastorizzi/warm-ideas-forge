@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
 
 const items = [
-  "Arte autoral",
-  "Exclusividade",
-  "Biossegurança",
-  "+12 anos",
-  "São Paulo",
-  "Sessões customizadas",
+  "Realismo Premium",
+  "Referência no RS",
+  "+12 anos em Ivoti",
   "Black & Grey",
-  "Fine Line",
-  "Realismo",
-  "Oriental",
+  "Retratos realistas",
+  "Tattoos exclusivas",
+  "Alto nível de detalhe",
+  "Fechamento de braço/perna",
+  "Tatuador de famosos",
+  "Presença em convenções",
 ];
 
 export function Marquee() {
