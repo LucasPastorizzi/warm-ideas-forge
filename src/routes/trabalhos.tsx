@@ -7,15 +7,15 @@ import workOriental from "@/assets/work-oriental.jpg";
 import imgg1 from "@/assets/iloveimg-converted/IMG_6284.jpg";
 import imgg2 from "@/assets/iloveimg-converted/IMG_5106.jpg";
 import imgg3 from "@/assets/iloveimg-converted/IMG_6284.jpg";
-import imgg4 from "@/assets/iloveimg-converted/IMG_8009.jpg";
+import imgg4 from "@/assets/iloveimg-converted/IMG_3138.jpg";
 import imgg5 from "@/assets/iloveimg-converted/IMG_8118.jpg";
-import imgg6 from "@/assets/iloveimg-converted/IMG_8302.jpg";
+import imgg6 from "@/assets/iloveimg-converted/IMG_8009.jpg";
 import imgg7 from "@/assets/iloveimg-converted/IMG_3143.jpg";
 import imgg8 from "@/assets/iloveimg-converted/IMG_3685.jpg";
 import imgg9 from "@/assets/iloveimg-converted/IMG_4802.jpg";
 import imgg10 from "@/assets/iloveimg-converted/IMG_3892.jpg";
 import imgg11 from "@/assets/iloveimg-converted/IMG_5076.jpg";
-import imgg12 from "@/assets/iloveimg-converted/IMG_3138.jpg"; 
+import imgg12 from "@/assets/iloveimg-converted/IMG_8969.jpg";
 
 
 
@@ -36,31 +36,31 @@ export const Route = createFileRoute("/trabalhos")({
 const slots: {
   img: string;
   t: string;
-  
+
   year: string;
   col: string;
   row: string;
   rot: number;
   z: number;
 }[] = [
-  // Linha 1
-  { img: imgg1, t: "Tattoo 01",  year: "2024", col: "1 / span 5", row: "1 / span 6", rot: -1.8, z: 2 },
-  { img: imgg2, t: "Tattoo 02",  year: "2025", col: "5 / span 4", row: "1 / span 4", rot: 1.2, z: 3 },
-  { img: imgg3, t: "Tattoo 03",  year: "2024", col: "9 / span 4", row: "1 / span 5", rot: -0.8, z: 2 },
-  { img: imgg4, t: "Tattoo 04",  year: "2024", col: "13 / span 4", row: "1 / span 6", rot: 2.1, z: 3 },
+    // Linha 1
+    { img: imgg1, t: "Tattoo 01", year: "2024", col: "1 / span 5", row: "1 / span 6", rot: -1.8, z: 2 },
+    { img: imgg2, t: "Tattoo 02", year: "2025", col: "5 / span 4", row: "1 / span 4", rot: 1.2, z: 3 },
+    { img: imgg3, t: "Tattoo 03", year: "2024", col: "9 / span 4", row: "1 / span 5", rot: -0.8, z: 2 },
+    { img: imgg4, t: "Tattoo 04", year: "2024", col: "13 / span 4", row: "1 / span 6", rot: 2.1, z: 3 },
 
-  // Linha 2
-  { img: imgg5, t: "Tattoo 05", year: "2023", col: "2 / span 4", row: "7 / span 4", rot: 2.4, z: 4 },
-  { img: imgg6, t: "Tattoo 06",  year: "2023", col: "6 / span 5", row: "5 / span 5", rot: -1.5, z: 3 },
-  { img: imgg7, t: "Tattoo 07",  year: "2024", col: "11 / span 3", row: "6 / span 4", rot: 0.9, z: 2 },
-  { img: imgg8, t: "Tattoo 08",  year: "2022", col: "14 / span 3", row: "7 / span 5", rot: -2.0, z: 3 },
+    // Linha 2
+    { img: imgg5, t: "Tattoo 05", year: "2023", col: "2 / span 4", row: "7 / span 4", rot: 2.4, z: 4 },
+    { img: imgg6, t: "Tattoo 06", year: "2023", col: "6 / span 5", row: "5 / span 5", rot: -1.5, z: 3 },
+    { img: imgg7, t: "Tattoo 07", year: "2024", col: "11 / span 3", row: "6 / span 4", rot: 0.9, z: 2 },
+    { img: imgg8, t: "Tattoo 08", year: "2022", col: "14 / span 3", row: "7 / span 5", rot: -2.0, z: 3 },
 
-  // Linha 3
-  { img: imgg9, t: "Tattoo 09", year: "2025", col: "1 / span 4", row: "11 / span 5", rot: 1.6, z: 2 },
-  { img: imgg10, t: "Tattoo 10", year: "2024", col: "5 / span 6", row: "10 / span 6", rot: -1.0, z: 3 },
-  { img: imgg11, t: "Tattoo 11",  year: "2025", col: "11 / span 3", row: "10 / span 4", rot: 2.8, z: 4 },
-  { img: imgg12, t: "Tattoo 12",  year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
-];
+    // Linha 3
+    { img: imgg9, t: "Tattoo 09", year: "2025", col: "1 / span 4", row: "11 / span 5", rot: 1.6, z: 2 },
+    { img: imgg10, t: "Tattoo 10", year: "2024", col: "5 / span 6", row: "10 / span 6", rot: -1.0, z: 3 },
+    { img: imgg11, t: "Tattoo 11", year: "2025", col: "11 / span 3", row: "10 / span 4", rot: 2.8, z: 4 },
+    { img: imgg12, t: "Tattoo 12", year: "2023", col: "14 / span 3", row: "12 / span 4", rot: -1.4, z: 2 },
+  ];
 
 function Trabalhos() {
   return (
@@ -100,7 +100,30 @@ function Trabalhos() {
                 src={s.img}
                 alt={s.t}
                 loading="lazy"
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+
+                  // AJUSTE FINO DO ENQUADRAMENTO
+                  objectPosition: [
+                    "48% center", // IMG_6284 - manga caveira
+                    "40% center", // IMG_5106 - templo japonês
+                    "42% center", // IMG_6284 - relógio/caveira
+                    "42% center", // IMG_3138 - rosas/olho
+
+                    "42% 38%",    // IMG_8118 - indígena
+                    "45% 42%",    // IMG_8009 - costas
+                    "46% center", // IMG_3143 - perna dark
+                    "50% center", // IMG_3685 - guerreiro
+
+                    "50% center", // IMG_4802 - cassino/braço
+                    "45% 44%",    // IMG_3892 - navio costas
+                    "52% center", // IMG_5076 - manga colorida
+                    "50% center", // IMG_8969 - rosto
+                  ][i],
+                }}
               />
               {/* Overlay com estilo + título */}
               <div
@@ -133,7 +156,7 @@ function Trabalhos() {
                   borderRadius: "999px",
                 }}
               >
-                
+
               </span>
             </div>
           ))}
